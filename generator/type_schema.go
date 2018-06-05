@@ -4,7 +4,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/morlay/goqcloud/generator/codegen"
+	"github.com/go-courier/codegen"
 )
 
 type TypeSchema struct {
@@ -37,86 +37,82 @@ func (s *TypeSchema) IsMap() bool {
 }
 
 func (s *TypeSchema) Write(file *codegen.File) {
-	file.WriteComments(s.Desc)
-	file.WriteTypeSpec(s.Name, s.WriteType)
+	file.WriteBlock(
+		codegen.Comments(s.Desc),
+		codegen.DeclType(
+			codegen.Var(s.SnippetType(file), s.Name),
+		),
+	)
 }
 
-func (s *TypeSchema) WriteType(file *codegen.File) {
+func (s *TypeSchema) SnippetType(file *codegen.File) codegen.SnippetType {
 	if s.IsArray() {
-		file.WriteString("[]")
-		s.Items.WriteType(file)
-		return
+		return codegen.Slice(s.Items.SnippetType(file))
 	}
 
 	if s.IsObject() {
-		file.WriteStructType(func(file *codegen.File) {
-			for _, embedType := range s.AllOf {
-				embedType.WriteType(file)
-				file.WriteLine()
+		fields := make([]*codegen.SnippetField, 0)
+
+		for _, embedType := range s.AllOf {
+			fields = append(fields, codegen.Var(embedType.SnippetType(file)))
+		}
+
+		names := make([]string, 0)
+		for name := range s.Props {
+			names = append(names, name)
+		}
+		sort.Strings(names)
+
+		for _, name := range names {
+			prop := s.Props[name]
+
+			tags := map[string][]string{}
+			tag := s.Tag
+			if tag == "" {
+				tag = "json"
+			}
+			tags[tag] = append(tags[tag], name)
+			if !prop.Required {
+				tags[tag] = append(tags[tag], "omitempty")
 			}
 
-			names := make([]string, 0)
-			for name := range s.Props {
-				names = append(names, name)
-			}
-			sort.Strings(names)
+			fields = append(fields, codegen.Var(prop.SnippetType(file), name).WithTags(tags).WithComments(prop.Desc))
+		}
 
-			for _, name := range names {
-				prop := s.Props[name]
-
-				file.WriteComments(prop.Desc)
-
-				file.WriteField(name, prop.WriteType)
-
-				tags := map[string][]string{}
-
-				tag := s.Tag
-				if tag == "" {
-					tag = "json"
-				}
-
-				tags[tag] = append(tags[tag], name)
-
-				if !prop.Required {
-					tags[tag] = append(tags[tag], "omitempty")
-				}
-
-				file.WriteTags(tags)
-				file.WriteLine()
-			}
-		})
-		return
+		return codegen.Struct(fields...)
 	}
 
-	ptrMark := "*"
-	if s.Required {
-		ptrMark = ""
+	maybeStarType := func(tpe codegen.SnippetType) codegen.SnippetType {
+		if !s.Required {
+			return codegen.Star(tpe)
+		}
+		return tpe
 	}
 
 	if s.Name != "" {
 		if s.ImportPath != "" {
-			file.WriteString(file.Use(s.ImportPath, s.Name))
-			return
+			return maybeStarType(codegen.Type(file.Use(s.ImportPath, s.Name)))
 		}
-		file.WriteString(ptrMark + s.Name)
-		return
+		return maybeStarType(codegen.Type(s.Name))
+
 	}
 
 	if s.Type != nil {
 		switch *s.Type {
 		case BasicTypeBoolean:
-			file.WriteString(ptrMark + "bool")
+			return maybeStarType(codegen.Bool)
 		case BasicTypeString:
-			file.WriteString(ptrMark + "string")
+			return maybeStarType(codegen.String)
 		case BasicTypeInteger:
-			file.WriteString(ptrMark + "int64")
+			return maybeStarType(codegen.Int64)
 		case BasicTypeFloat:
-			file.WriteString(ptrMark + "float64")
+			return maybeStarType(codegen.Float64)
 		case BasicTypeTimestamp:
-			file.WriteString(ptrMark + file.Use("time", "Time"))
+			return maybeStarType(codegen.Type(file.Use("time", "Time")))
 		}
 	}
 
+	return codegen.Interface()
 }
 
 func (s *TypeSchema) AddProp(name string, propSchema *TypeSchema) {

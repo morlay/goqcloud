@@ -9,7 +9,8 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"github.com/sirupsen/logrus"
 
-	"github.com/morlay/goqcloud/generator/codegen"
+	"github.com/go-courier/codegen"
+	"github.com/davecgh/go-spew/spew"
 )
 
 type APIDocEntries struct {
@@ -143,8 +144,8 @@ func (doc *APIDoc) scanAPIDetails() {
 func (doc *APIDoc) WriteAPIs() {
 	for name := range doc.APIs {
 		api := doc.APIs[name]
-		f := codegen.NewFile(doc.Service)
-		f.SetFilename("./clients/" + f.PkgName + "/" + codegen.Identifier(api.Name).LowerSnakeCase() + ".go")
+		pkgName := codegen.LowerSnakeCase(doc.Service)
+		f := codegen.NewFile(pkgName, "./clients/"+pkgName+"/"+codegen.LowerSnakeCase(api.Name)+".go")
 
 		api.Write(f)
 
@@ -154,8 +155,8 @@ func (doc *APIDoc) WriteAPIs() {
 }
 
 func (doc *APIDoc) WriteDataTypes() {
-	f := codegen.NewFile(doc.Service)
-	f.SetFilename("./clients/" + f.PkgName + "/data_types.go")
+	pkgName := codegen.LowerSnakeCase(doc.Service)
+	f := codegen.NewFile(pkgName, "./clients/"+pkgName+"/data_types.go")
 
 	for name := range doc.DataTypes {
 		dataType := doc.DataTypes[name]
@@ -183,19 +184,19 @@ func NewAPI(service *string, name string, desc string, docUrl string) *API {
 		Desc:    desc,
 		DocURL:  docUrl,
 		Parameters: &TypeSchema{
-			Name: codegen.Identifier(name + "Request").UpperCamelCase(),
+			Name: codegen.UpperCamelCase(name + "Request"),
 			Desc: desc + "\n" + docUrl,
 			Tag:  "name",
 			Props: map[string]*TypeSchema{
 				"Region": &TypeSchema{
-					Type: &regionType,
-					Desc: "区域",
+					Type:     &regionType,
+					Desc:     "区域",
 					Required: true,
 				},
 			},
 		},
 		Response: &TypeSchema{
-			Name: codegen.Identifier(name + "Response").UpperCamelCase(),
+			Name: codegen.UpperCamelCase(name + "Response"),
 			AllOf: []*TypeSchema{
 				&TypeSchema{
 					ImportPath: "github.com/morlay/goqcloud",
@@ -225,32 +226,28 @@ func (api *API) Write(file *codegen.File) {
 }
 
 func (api *API) WriteInvoke(file *codegen.File) {
-	file.WriteFuncSpec(
-		"Invoke",
-		func(file *codegen.File) {
-			file.WriteField("req", file.TypeWriter("*"+api.Parameters.Name))
-		},
-		func(file *codegen.File) {
-			file.WriteField("client", file.TypeWriter(file.Use("github.com/morlay/goqcloud", "Client")))
-		},
-		func(file *codegen.File) {
-			file.WriteField("", file.TypeWriter("*"+api.Response.Name))
-			file.WriteComma()
-			file.WriteField("", file.TypeWriter("error"))
-		},
-		func(file *codegen.File) {
-			file.WriteString("resp := ")
-			file.WriteString("&" + api.Response.Name + "{}")
-			file.WriteLine()
 
-			file.WriteString("err := client")
-			file.WriteCall("Request", file.Val(*api.Service), file.Val(api.Name), file.Val(api.Version))
-			file.WriteCall("Do", "req", "resp")
+	spew.Dump(file.Use("github.com/morlay/goqcloud", "Client"))
 
-			file.WriteLine()
-
-			file.WriteReturn("resp", "err")
-		},
+	file.WriteBlock(
+		codegen.Func(
+			codegen.Var(codegen.Type(file.Use("github.com/morlay/goqcloud", "Client")), "client"),
+		).Return(
+			codegen.Var(codegen.Star(codegen.Type(api.Response.Name))),
+			codegen.Var(codegen.Star(codegen.Error)),
+		).MethodOf(
+			codegen.Var(codegen.Star(codegen.Type(api.Parameters.Name)), "req"),
+		).Named("Invoke").Do(
+			codegen.Define(codegen.Id("resp")).By(file.Expr("&?{}", codegen.Type(api.Response.Name))),
+			codegen.Define(codegen.Id("err")).By(
+				codegen.Sel(
+					codegen.Id("client"),
+					codegen.Call("Request", file.Val(*api.Service), file.Val(api.Name), file.Val(api.Version)),
+					codegen.Call("Do", codegen.Id("req"), codegen.Id("resp")),
+				),
+			),
+			codegen.Return(codegen.Id("resp"), codegen.Id("err")),
+		),
 	)
 }
 

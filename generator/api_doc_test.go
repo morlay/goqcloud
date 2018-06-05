@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/morlay/goqcloud/generator/codegen"
+	"github.com/go-courier/codegen"
 )
 
 func init() {
@@ -19,7 +19,7 @@ func TestAPIDoc(t *testing.T) {
 
 	d.Scan()
 
-	f := codegen.NewFile(d.Service)
+	f := codegen.NewFile(d.Service, "test.go")
 
 	d.APIs["DescribeInstances"].Write(f)
 
