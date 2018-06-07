@@ -16,6 +16,7 @@ func TestCVMDescribeRegions(t *testing.T) {
 	client := goqcloud.NewClientWithCredential(
 		os.Getenv("TENCENTCLOUD_SECRET_ID"),
 		os.Getenv("TENCENTCLOUD_SECRET_KEY"),
+		goqcloud.ClientOptionWithTransports(goqcloud.NewLogTransport()),
 	)
 
 	req := cvm.DescribeRegionsRequest{}

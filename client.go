@@ -27,8 +27,9 @@ type MaybeErrorResponse interface {
 	GetError() error
 }
 
-func NewClientWithCredential(secretId, secretKey string) *ClientWithCredential {
+func NewClientWithCredential(secretId, secretKey string, opts ...*ClientOption) *ClientWithCredential {
 	return &ClientWithCredential{
+		ClientOption: ComposeClientOptions(opts...),
 		Credential: signature.Credential{
 			SecretId:  secretId,
 			SecretKey: secretKey,
@@ -36,28 +37,69 @@ func NewClientWithCredential(secretId, secretKey string) *ClientWithCredential {
 	}
 }
 
+func ComposeClientOptions(opts ...*ClientOption) *ClientOption {
+	if len(opts) == 0 {
+		return nil
+	}
+
+	opt := &ClientOption{}
+
+	for i := range opts {
+		o := opts[i]
+		if o.Timeout != 0 {
+			opt.Timeout = o.Timeout
+		}
+		if o.Transports != nil {
+			opt.Transports = o.Transports
+		}
+	}
+
+	return opt
+}
+
+func ClientOptionWithTimeout(timeout time.Duration) *ClientOption {
+	return &ClientOption{
+		Timeout: timeout,
+	}
+}
+
+func ClientOptionWithTransports(transports ...transform.Transport) *ClientOption {
+	return &ClientOption{
+		Transports: transports,
+	}
+}
+
+type ClientOption struct {
+	Timeout    time.Duration
+	Transports []transform.Transport
+}
+
 type ClientWithCredential struct {
+	*ClientOption
 	signature.Credential
 }
 
 func (c *ClientWithCredential) Request(service string, action string, version string) RequestSender {
+	opt := c.ClientOption
+	if opt == nil {
+		opt = &ClientOption{}
+	}
+
+	opt.Transports = append(opt.Transports, signature.NewAutoSignTransport(&c.Credential))
+
 	return &httpRequestSender{
-		service: service,
-		action:  action,
-		version: version,
-		transports: []transform.Transport{
-			NewLogTransport(),
-			signature.NewAutoSignTransport(&c.Credential),
-		},
+		service:      service,
+		action:       action,
+		version:      version,
+		ClientOption: *opt,
 	}
 }
 
 type httpRequestSender struct {
-	timeout    time.Duration
-	service    string
-	version    string
-	action     string
-	transports []transform.Transport
+	service string
+	version string
+	action  string
+	ClientOption
 }
 
 func (r *httpRequestSender) Do(req interface{}, resp interface{}) error {
@@ -69,13 +111,13 @@ func (r *httpRequestSender) Do(req interface{}, resp interface{}) error {
 		)
 	}
 
-	if r.timeout == 0 {
-		r.timeout = 60 * time.Second
+	if r.Timeout == 0 {
+		r.Timeout = 60 * time.Second
 	}
 
 	client := &http.Client{}
-	client.Timeout = r.timeout
-	client.Transport = transform.ComposeTransports(r.transports...)(&http.Transport{
+	client.Timeout = r.Timeout
+	client.Transport = transform.ComposeTransports(r.Transports...)(&http.Transport{
 		DialContext: (&net.Dialer{
 			Timeout:   client.Timeout,
 			KeepAlive: 0,
