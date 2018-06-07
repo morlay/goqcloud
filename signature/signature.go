@@ -17,7 +17,6 @@ import (
 )
 
 type Credential struct {
-	Region    string
 	SecretId  string
 	SecretKey string
 }
