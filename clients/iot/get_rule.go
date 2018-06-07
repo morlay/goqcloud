@@ -6,6 +6,7 @@ import (
 
 // 获取转发规则信息
 // https://cloud.tencent.com/document/api/568/16461
+
 type GetRuleRequest struct {
 	// 区域
 	Region string `name:"Region"`

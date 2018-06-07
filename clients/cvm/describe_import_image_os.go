@@ -6,6 +6,7 @@ import (
 
 // 查询外部导入镜像支持的OS列表
 // https://cloud.tencent.com/document/api/213/15718
+
 type DescribeImportImageOsRequest struct {
 	// 区域
 	Region string `name:"Region"`

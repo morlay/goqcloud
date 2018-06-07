@@ -6,6 +6,7 @@ import (
 
 // 修改VPC属性
 // https://cloud.tencent.com/document/api/215/15773
+
 type ModifyVpcAttributeRequest struct {
 	// DNS地址，最多支持4个，第1个默认为主，其余为备
 	DnsServers []*string `name:"DnsServers,omitempty"`

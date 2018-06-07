@@ -6,6 +6,7 @@ import (
 
 // 查询指定数据库的备份数据表
 // https://cloud.tencent.com/document/api/236/15846
+
 type DescribeBackupTablesRequest struct {
 	// 指定的数据库名。
 	DatabaseName string `name:"DatabaseName"`

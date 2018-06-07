@@ -6,6 +6,7 @@ import (
 
 // 查询数据库
 // https://cloud.tencent.com/document/api/236/17493
+
 type DescribeDatabasesRequest struct {
 	// 匹配数据库库名的正则表达式，规则同MySQL官网
 	DatabaseRegexp *string `name:"DatabaseRegexp,omitempty"`

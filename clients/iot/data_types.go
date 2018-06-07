@@ -4,25 +4,25 @@ import (
 	time "time"
 )
 
-// 用户
-type User struct {
-	// app_id
-	AppId int64 `json:"AppId"`
-	// 用户类型（1：国内，2：国际）
-	Area int64 `json:"Area"`
-	// 计费类型（日结、月结）
-	BillingType string `json:"BillingType"`
+// 应用用户
+
+type AppUser struct {
+	// 应用Id
+	ApplicationId string `json:"ApplicationId"`
 	// 创建时间
 	CreateTime time.Time `json:"CreateTime"`
-	// 备注信息
-	Message string `json:"Message"`
-	// 用户状态（0：正常，1：欠费，2：恶意）
-	Status int64 `json:"Status"`
+	// 绑定设备列表
+	Devices []*Object `json:"Devices"`
+	// 昵称
+	NickName string `json:"NickName"`
 	// 修改时间
 	UpdateTime time.Time `json:"UpdateTime"`
+	// 用户名
+	UserName string `json:"UserName"`
 }
 
 // 设备
+
 type Device struct {
 	// 创建时间
 	CreateTime time.Time `json:"CreateTime"`
@@ -38,8 +38,21 @@ type Device struct {
 	UpdateTime time.Time `json:"UpdateTime"`
 }
 
+// 设备状态
+
+type DeviceStatus struct {
+	// 设备名称
+	DeviceName string `json:"DeviceName"`
+	// 设备状态（inactive, online, offline）
+	Status string `json:"Status"`
+}
+
 // 对象
-type Object *Object // 规则
+
+type Object *Object
+
+// 规则
+
 type Rule struct {
 	// 转发
 	Actions []*Object `json:"Actions"`
@@ -64,6 +77,7 @@ type Rule struct {
 }
 
 // 查询
+
 type RuleQuery struct {
 	// 过滤规则
 	Condition string `json:"Condition"`
@@ -73,55 +87,8 @@ type RuleQuery struct {
 	Topic string `json:"Topic"`
 }
 
-// Topic
-type Topic struct {
-	// 创建时间
-	CreateTime time.Time `json:"CreateTime"`
-	// 已删除
-	Deleted int64 `json:"Deleted"`
-	// 消息最大数量
-	MsgCount int64 `json:"MsgCount"`
-	// 消息最大生命周期
-	MsgLife int64 `json:"MsgLife"`
-	// 消息最大大小
-	MsgSize int64 `json:"MsgSize"`
-	// Topic完整路径
-	Path string `json:"Path"`
-	// 产品Id
-	ProductId string `json:"ProductId"`
-	// TopicId
-	TopicId string `json:"TopicId"`
-	// Topic名称
-	TopicName string `json:"TopicName"`
-	// 更新时间
-	UpdateTime `json:"UpdateTime"`
-}
-
-// 应用用户
-type AppUser struct {
-	// 应用Id
-	ApplicationId string `json:"ApplicationId"`
-	// 创建时间
-	CreateTime `json:"CreateTime"`
-	// 绑定设备列表
-	Devices []*Object `json:"Devices"`
-	// 昵称
-	NickName string `json:"NickName"`
-	// 修改时间
-	UpdateTime `json:"UpdateTime"`
-	// 用户名
-	UserName string `json:"UserName"`
-}
-
-// 设备状态
-type DeviceStatus struct {
-	// 设备名称
-	DeviceName string `json:"DeviceName"`
-	// 设备状态（inactive, online, offline）
-	Status string `json:"Status"`
-}
-
 // 产品
+
 type Product struct {
 	// AppId
 	AppId int64 `json:"AppId"`
@@ -150,5 +117,49 @@ type Product struct {
 	// 产品规格
 	Standard int64 `json:"Standard"`
 	// 更新时间
+	UpdateTime time.Time `json:"UpdateTime"`
+}
+
+// Topic
+
+type Topic struct {
+	// 创建时间
+	CreateTime time.Time `json:"CreateTime"`
+	// 已删除
+	Deleted int64 `json:"Deleted"`
+	// 消息最大数量
+	MsgCount int64 `json:"MsgCount"`
+	// 消息最大生命周期
+	MsgLife int64 `json:"MsgLife"`
+	// 消息最大大小
+	MsgSize int64 `json:"MsgSize"`
+	// Topic完整路径
+	Path string `json:"Path"`
+	// 产品Id
+	ProductId string `json:"ProductId"`
+	// TopicId
+	TopicId string `json:"TopicId"`
+	// Topic名称
+	TopicName string `json:"TopicName"`
+	// 更新时间
+	UpdateTime time.Time `json:"UpdateTime"`
+}
+
+// 用户
+
+type User struct {
+	// app_id
+	AppId int64 `json:"AppId"`
+	// 用户类型（1：国内，2：国际）
+	Area int64 `json:"Area"`
+	// 计费类型（日结、月结）
+	BillingType string `json:"BillingType"`
+	// 创建时间
+	CreateTime time.Time `json:"CreateTime"`
+	// 备注信息
+	Message string `json:"Message"`
+	// 用户状态（0：正常，1：欠费，2：恶意）
+	Status int64 `json:"Status"`
+	// 修改时间
 	UpdateTime time.Time `json:"UpdateTime"`
 }

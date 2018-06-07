@@ -6,6 +6,7 @@ import (
 
 // 删除路由表
 // https://cloud.tencent.com/document/api/215/15771
+
 type DeleteRouteTableRequest struct {
 	// 区域
 	Region string `name:"Region"`

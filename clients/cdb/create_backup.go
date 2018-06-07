@@ -6,6 +6,7 @@ import (
 
 // 创建云数据库备份
 // https://cloud.tencent.com/document/api/236/15844
+
 type CreateBackupRequest struct {
 	// 目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备。
 	BackupMethod string `name:"BackupMethod"`

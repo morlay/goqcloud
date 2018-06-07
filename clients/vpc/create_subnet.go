@@ -6,6 +6,7 @@ import (
 
 // 创建子网
 // https://cloud.tencent.com/document/api/215/15782
+
 type CreateSubnetRequest struct {
 	// 子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。
 	CidrBlock string `name:"CidrBlock"`

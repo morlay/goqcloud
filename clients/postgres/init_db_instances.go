@@ -6,6 +6,7 @@ import (
 
 // 初始化实例
 // https://cloud.tencent.com/document/api/409/16774
+
 type InitDbInstancesRequest struct {
 	// 实例根账号用户名。
 	AdminName string `name:"AdminName"`

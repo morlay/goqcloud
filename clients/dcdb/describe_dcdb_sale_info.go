@@ -6,6 +6,7 @@ import (
 
 // 查询分布式数据库可售卖地域和可用区信息
 // https://cloud.tencent.com/document/api/557/16141
+
 type DescribeDcdbSaleInfoRequest struct {
 	// 区域
 	Region string `name:"Region"`

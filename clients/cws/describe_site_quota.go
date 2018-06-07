@@ -6,6 +6,7 @@ import (
 
 // 查看站点购买配额
 // https://cloud.tencent.com/document/api/692/16751
+
 type DescribeSiteQuotaRequest struct {
 	// 区域
 	Region string `name:"Region"`

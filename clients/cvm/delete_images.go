@@ -6,6 +6,7 @@ import (
 
 // 删除镜像
 // https://cloud.tencent.com/document/api/213/15716
+
 type DeleteImagesRequest struct {
 	// 准备删除的镜像Id列表
 	ImageIds []*string `name:"ImageIds"`

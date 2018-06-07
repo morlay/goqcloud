@@ -6,6 +6,7 @@ import (
 
 // 安全组添加规则
 // https://cloud.tencent.com/document/api/215/15807
+
 type CreateSecurityGroupPoliciesRequest struct {
 	// 区域
 	Region string `name:"Region"`

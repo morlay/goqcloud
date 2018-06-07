@@ -6,6 +6,7 @@ import (
 
 // 创建快照
 // https://cloud.tencent.com/document/api/362/15648
+
 type CreateSnapshotRequest struct {
 	// 需要创建快照的云硬盘ID，可通过DescribeDisks接口查询。
 	DiskId string `name:"DiskId"`

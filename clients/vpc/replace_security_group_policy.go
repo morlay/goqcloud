@@ -6,6 +6,7 @@ import (
 
 // 替换单条安全组路由规则
 // https://cloud.tencent.com/document/api/215/15811
+
 type ReplaceSecurityGroupPolicyRequest struct {
 	// 区域
 	Region string `name:"Region"`

@@ -6,6 +6,7 @@ import (
 
 // 关闭实例
 // https://cloud.tencent.com/document/api/213/15743
+
 type StopInstancesRequest struct {
 	// 是否在正常关闭失败后选择强制关闭实例。取值范围：TRUE：表示在正常关闭失败后进行强制关闭FALSE：表示在正常关闭失败后不进行强制关闭默认取值：FALSE。
 	ForceStop *bool `name:"ForceStop,omitempty"`

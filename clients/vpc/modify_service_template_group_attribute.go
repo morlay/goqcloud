@@ -6,6 +6,7 @@ import (
 
 // 修改协议端口模板集合
 // https://cloud.tencent.com/document/api/215/16723
+
 type ModifyServiceTemplateGroupAttributeRequest struct {
 	// 区域
 	Region string `name:"Region"`

@@ -6,6 +6,7 @@ import (
 
 // 删除规则
 // https://cloud.tencent.com/document/api/568/16460
+
 type DeleteRuleRequest struct {
 	// 区域
 	Region string `name:"Region"`

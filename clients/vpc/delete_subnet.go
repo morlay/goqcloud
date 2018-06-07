@@ -6,6 +6,7 @@ import (
 
 // 删除子网
 // https://cloud.tencent.com/document/api/215/15783
+
 type DeleteSubnetRequest struct {
 	// 区域
 	Region string `name:"Region"`

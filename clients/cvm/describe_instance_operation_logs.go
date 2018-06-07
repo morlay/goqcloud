@@ -6,6 +6,7 @@ import (
 
 // 查询实例操作记录
 // https://cloud.tencent.com/document/api/213/15737
+
 type DescribeInstanceOperationLogsRequest struct {
 	// 每次请求的Filters的上限为1，Filter.Values的上限为1。Filters.1.Name目前支持“instance-id”，即根据实例 ID 过滤。实例 ID 形如：ins-1w2x3y4z。
 	Filters []*Filter `name:"Filters"`

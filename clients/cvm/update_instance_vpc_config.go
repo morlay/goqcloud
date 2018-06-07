@@ -6,6 +6,7 @@ import (
 
 // 修改实例vpc属性
 // https://cloud.tencent.com/document/api/213/15750
+
 type UpdateInstanceVpcConfigRequest struct {
 	// 是否对运行中的实例选择强制关机。默认为TRUE。
 	ForceStop *bool `name:"ForceStop,omitempty"`

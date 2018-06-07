@@ -6,6 +6,7 @@ import (
 
 // 扩容实例询价
 // https://cloud.tencent.com/document/api/237/16183
+
 type DescribeUpgradePriceRequest struct {
 	// 待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
 	InstanceId string `name:"InstanceId"`

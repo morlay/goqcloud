@@ -7,6 +7,7 @@ import (
 
 // 修改监测任务的属性
 // https://cloud.tencent.com/document/api/692/16746
+
 type ModifyMonitorAttributeRequest struct {
 	// 扫描周期，单位小时，每X小时执行一次
 	Crontab int64 `name:"Crontab"`

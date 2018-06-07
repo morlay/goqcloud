@@ -6,6 +6,7 @@ import (
 
 // 删除设备
 // https://cloud.tencent.com/document/api/568/16466
+
 type DeleteDeviceRequest struct {
 	// 设备名称
 	DeviceName string `name:"DeviceName"`

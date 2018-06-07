@@ -6,6 +6,7 @@ import (
 
 // 修改VPN通道
 // https://cloud.tencent.com/document/api/215/17508
+
 type ModifyVpnConnectionAttributeRequest struct {
 	// IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自保护机制，用户配置网络安全协议。
 	IKEOptionsSpecification *IKEOptionsSpecification `name:"IKEOptionsSpecification,omitempty"`

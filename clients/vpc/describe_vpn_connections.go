@@ -6,6 +6,7 @@ import (
 
 // 查询VPN通道列表
 // https://cloud.tencent.com/document/api/215/17515
+
 type DescribeVpnConnectionsRequest struct {
 	// 过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。
 	Filters []*Filter `name:"Filters,omitempty"`

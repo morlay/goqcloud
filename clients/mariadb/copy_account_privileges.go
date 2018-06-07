@@ -6,6 +6,7 @@ import (
 
 // 复制账号权限
 // https://cloud.tencent.com/document/api/237/16169
+
 type CopyAccountPrivilegesRequest struct {
 	// 目的用户允许的访问 host
 	DstHost string `name:"DstHost"`

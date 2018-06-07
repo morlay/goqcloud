@@ -6,6 +6,7 @@ import (
 
 // 查询镜像配额上限
 // https://cloud.tencent.com/document/api/213/15719
+
 type DescribeImageQuotaRequest struct {
 	// 区域
 	Region string `name:"Region"`

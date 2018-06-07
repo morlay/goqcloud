@@ -6,6 +6,7 @@ import (
 
 // 查看站点列表
 // https://cloud.tencent.com/document/api/692/16752
+
 type DescribeSitesRequest struct {
 	// 过滤条件
 	Filters []*Filter `name:"Filters,omitempty"`

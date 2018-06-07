@@ -6,6 +6,7 @@ import (
 
 // 获取设备列表
 // https://cloud.tencent.com/document/api/568/16468
+
 type GetDevicesRequest struct {
 	// 长度
 	Length *int64 `name:"Length,omitempty"`

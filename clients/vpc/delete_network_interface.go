@@ -6,6 +6,7 @@ import (
 
 // 删除弹性网卡
 // https://cloud.tencent.com/document/api/215/15822
+
 type DeleteNetworkInterfaceRequest struct {
 	// 弹性网卡实例ID，例如：eni-m6dyj72l。
 	NetworkInterfaceId string `name:"NetworkInterfaceId"`

@@ -6,6 +6,7 @@ import (
 
 // 删除基础网络互通
 // https://cloud.tencent.com/document/api/215/15777
+
 type DetachClassicLinkVpcRequest struct {
 	// CVM实例ID查询。形如：ins-r8hr2upy。
 	InstanceIds []*string `name:"InstanceIds"`

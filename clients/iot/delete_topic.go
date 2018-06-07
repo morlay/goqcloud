@@ -6,6 +6,7 @@ import (
 
 // 删除Topic
 // https://cloud.tencent.com/document/api/568/16445
+
 type DeleteTopicRequest struct {
 	// 产品Id
 	ProductId string `name:"ProductId"`

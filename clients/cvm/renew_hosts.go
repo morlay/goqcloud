@@ -6,6 +6,7 @@ import (
 
 // 续费CDH实例
 // https://cloud.tencent.com/document/api/213/16476
+
 type RenewHostsRequest struct {
 	// 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
 	HostChargePrepaid ChargePrepaid `name:"HostChargePrepaid"`

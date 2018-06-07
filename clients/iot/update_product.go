@@ -6,6 +6,7 @@ import (
 
 // 更新产品信息
 // https://cloud.tencent.com/document/api/568/16451
+
 type UpdateProductRequest struct {
 	// 数据模版（json）
 	DataTemplate *string `name:"DataTemplate,omitempty"`

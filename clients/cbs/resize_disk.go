@@ -6,6 +6,7 @@ import (
 
 // 扩容云硬盘
 // https://cloud.tencent.com/document/api/362/16310
+
 type ResizeDiskRequest struct {
 	// 云硬盘ID， 通过DescribeDisks接口查询。
 	DiskId string `name:"DiskId"`

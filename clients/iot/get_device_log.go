@@ -7,6 +7,7 @@ import (
 
 // 获取设备日志
 // https://cloud.tencent.com/document/api/568/16523
+
 type GetDeviceLogRequest struct {
 	// 设备名称列表，最大支持100台
 	DeviceNames []*string `name:"DeviceNames"`

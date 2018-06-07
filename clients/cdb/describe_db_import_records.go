@@ -6,6 +6,7 @@ import (
 
 // 查询数据库导入任务记录
 // https://cloud.tencent.com/document/api/236/15856
+
 type DescribeDbImportRecordsRequest struct {
 	// 结束时间，时间格式如：2016-01-01 23:59:59。
 	EndTime *string `name:"EndTime,omitempty"`

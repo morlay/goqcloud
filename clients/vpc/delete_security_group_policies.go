@@ -6,6 +6,7 @@ import (
 
 // 删除安全组规则
 // https://cloud.tencent.com/document/api/215/15809
+
 type DeleteSecurityGroupPoliciesRequest struct {
 	// 区域
 	Region string `name:"Region"`

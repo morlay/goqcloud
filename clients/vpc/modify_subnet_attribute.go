@@ -6,6 +6,7 @@ import (
 
 // 修改子网属性
 // https://cloud.tencent.com/document/api/215/15781
+
 type ModifySubnetAttributeRequest struct {
 	// 子网是否开启广播。
 	EnableBroadcast *string `name:"EnableBroadcast,omitempty"`

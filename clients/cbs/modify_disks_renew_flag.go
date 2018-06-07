@@ -6,6 +6,7 @@ import (
 
 // 修改云硬盘续费标识
 // https://cloud.tencent.com/document/api/362/15668
+
 type ModifyDisksRenewFlagRequest struct {
 	// 一个或多个待操作的云硬盘ID。
 	DiskIds []*string `name:"DiskIds"`

@@ -6,6 +6,7 @@ import (
 
 // 查询实例机型列表
 // https://cloud.tencent.com/document/api/213/15749
+
 type DescribeInstanceTypeConfigsRequest struct {
 	// 过滤条件。 zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。 instance-family - String - 是否必填：否 -（过滤条件）按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。每次请求的Filters的上限为10，Filter.Values的上限为1。
 	Filters []*Filter `name:"Filters,omitempty"`

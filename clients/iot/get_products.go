@@ -6,6 +6,7 @@ import (
 
 // 获取产品列表
 // https://cloud.tencent.com/document/api/568/16450
+
 type GetProductsRequest struct {
 	// 长度
 	Length *int64 `name:"Length,omitempty"`

@@ -6,6 +6,7 @@ import (
 
 // 修改云硬盘属性
 // https://cloud.tencent.com/document/api/362/15659
+
 type ModifyDiskAttributesRequest struct {
 	// 一个或多个待操作的云硬盘ID。如果传入多个云盘ID，仅支持所有云盘修改为同一属性。
 	DiskIds []*string `name:"DiskIds"`

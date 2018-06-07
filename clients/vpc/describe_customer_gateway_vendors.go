@@ -6,6 +6,7 @@ import (
 
 // 查询可支持的对端网关厂商信息
 // https://cloud.tencent.com/document/api/215/17517
+
 type DescribeCustomerGatewayVendorsRequest struct {
 	// 区域
 	Region string `name:"Region"`

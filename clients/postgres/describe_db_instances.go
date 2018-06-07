@@ -6,6 +6,7 @@ import (
 
 // 查询实例列表
 // https://cloud.tencent.com/document/api/409/16773
+
 type DescribeDbInstancesRequest struct {
 	// 过滤条件，目前支持：db-instance-id、db-instance-name两种。
 	Filters []*Filter `name:"Filters,omitempty"`

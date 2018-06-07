@@ -6,6 +6,7 @@ import (
 
 // 重启实例
 // https://cloud.tencent.com/document/api/213/15742
+
 type RebootInstancesRequest struct {
 	// 是否在正常重启失败后选择强制重启实例。取值范围：TRUE：表示在正常重启失败后进行强制重启FALSE：表示在正常重启失败后不进行强制重启默认取值：FALSE。
 	ForceReboot *bool `name:"ForceReboot,omitempty"`

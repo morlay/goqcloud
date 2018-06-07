@@ -6,6 +6,7 @@ import (
 
 // 查询云数据库实例的字符集
 // https://cloud.tencent.com/document/api/236/15866
+
 type DescribeDbInstanceCharsetRequest struct {
 	// 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用查询实例列表 接口获取，其值为输出参数中字段 InstanceId 的值。
 	InstanceId string `name:"InstanceId"`

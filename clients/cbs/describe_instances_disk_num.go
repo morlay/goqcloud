@@ -6,6 +6,7 @@ import (
 
 // 查询实例关联的云硬盘数量
 // https://cloud.tencent.com/document/api/362/16311
+
 type DescribeInstancesDiskNumRequest struct {
 	// 云服务器实例ID，通过DescribeInstances接口查询。
 	InstanceIds []*string `name:"InstanceIds"`

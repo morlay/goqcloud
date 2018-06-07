@@ -6,6 +6,7 @@ import (
 
 // 下发设备控制指令
 // https://cloud.tencent.com/document/api/568/16525
+
 type IssueDeviceControlRequest struct {
 	// 控制数据（json）
 	ControlData string `name:"ControlData"`

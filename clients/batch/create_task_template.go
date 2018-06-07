@@ -6,6 +6,7 @@ import (
 
 // 创建任务模板
 // https://cloud.tencent.com/document/api/599/15899
+
 type CreateTaskTemplateRequest struct {
 	// 区域
 	Region string `name:"Region"`

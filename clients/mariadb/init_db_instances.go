@@ -6,6 +6,7 @@ import (
 
 // 初始化实例
 // https://cloud.tencent.com/document/api/237/16185
+
 type InitDbInstancesRequest struct {
 	// 待初始化的实例Id列表，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
 	InstanceIds []*string `name:"InstanceIds"`

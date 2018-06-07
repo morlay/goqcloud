@@ -6,6 +6,7 @@ import (
 
 // 挂载云硬盘
 // https://cloud.tencent.com/document/api/362/16313
+
 type AttachDisksRequest struct {
 	// 将要被挂载的弹性云盘ID。通过DescribeDisks接口查询。单次最多可挂载10块弹性云盘。
 	DiskIds []*string `name:"DiskIds"`

@@ -6,6 +6,7 @@ import (
 
 // 修改备份日志保存天数
 // https://cloud.tencent.com/document/api/237/16151
+
 type ModifyLogFileRetentionPeriodRequest struct {
 	// 保存的天数,不能超过30
 	Days int64 `name:"Days"`

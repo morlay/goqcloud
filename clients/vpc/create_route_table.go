@@ -6,6 +6,7 @@ import (
 
 // 创建路由表
 // https://cloud.tencent.com/document/api/215/15768
+
 type CreateRouteTableRequest struct {
 	// 区域
 	Region string `name:"Region"`

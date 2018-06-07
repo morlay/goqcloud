@@ -6,6 +6,7 @@ import (
 
 // 重置账号密码
 // https://cloud.tencent.com/document/api/237/16168
+
 type ResetAccountPasswordRequest struct {
 	// 用户允许的访问 host，用户名+host唯一确定一个账号。
 	Host string `name:"Host"`

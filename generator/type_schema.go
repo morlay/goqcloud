@@ -107,7 +107,7 @@ func (s *TypeSchema) SnippetType(file *codegen.File) codegen.SnippetType {
 			return maybeStarType(codegen.Int64)
 		case BasicTypeFloat:
 			return maybeStarType(codegen.Float64)
-		case BasicTypeTimestamp:
+		case BasicTypeTimestamp, BasicTypeDate:
 			return maybeStarType(codegen.Type(file.Use("time", "Time")))
 		}
 	}
@@ -127,6 +127,7 @@ func (s *TypeSchema) AddProp(name string, propSchema *TypeSchema) {
 type BasicType string
 
 const (
+	BasicTypeDate      BasicType = "Date"
 	BasicTypeTimestamp BasicType = "Timestamp"
 	BasicTypeString    BasicType = "String"
 	BasicTypeInteger   BasicType = "Integer"

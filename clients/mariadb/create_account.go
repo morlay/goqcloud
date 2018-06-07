@@ -6,6 +6,7 @@ import (
 
 // 创建账号
 // https://cloud.tencent.com/document/api/237/16165
+
 type CreateAccountRequest struct {
 	// 账号备注，可以包含中文、英文字符、常见符号和数字，长度为0~256字符
 	Description *string `name:"Description,omitempty"`

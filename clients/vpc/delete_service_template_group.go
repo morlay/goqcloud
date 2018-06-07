@@ -6,6 +6,7 @@ import (
 
 // 删除协议端口模板集合
 // https://cloud.tencent.com/document/api/215/16715
+
 type DeleteServiceTemplateGroupRequest struct {
 	// 区域
 	Region string `name:"Region"`

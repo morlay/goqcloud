@@ -6,6 +6,7 @@ import (
 
 // 创建CDH实例
 // https://cloud.tencent.com/document/api/213/16473
+
 type AllocateHostsRequest struct {
 	// 用于保证请求幂等性的字符串。
 	ClientToken *string `name:"ClientToken,omitempty"`

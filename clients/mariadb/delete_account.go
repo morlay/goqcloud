@@ -6,6 +6,7 @@ import (
 
 // 删除账号
 // https://cloud.tencent.com/document/api/237/16171
+
 type DeleteAccountRequest struct {
 	// 用户允许的访问 host
 	Host string `name:"Host"`

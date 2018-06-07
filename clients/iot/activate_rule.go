@@ -6,6 +6,7 @@ import (
 
 // 启用规则
 // https://cloud.tencent.com/document/api/568/16457
+
 type ActivateRuleRequest struct {
 	// 区域
 	Region string `name:"Region"`

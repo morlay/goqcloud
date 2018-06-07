@@ -6,6 +6,7 @@ import (
 
 // 续费VPN网关
 // https://cloud.tencent.com/document/api/215/17506
+
 type RenewVpnGatewayRequest struct {
 	// 预付费计费模式。
 	InstanceChargePrepaid InstanceChargePrepaid `name:"InstanceChargePrepaid"`

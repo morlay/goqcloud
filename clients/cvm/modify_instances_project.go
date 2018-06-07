@@ -6,6 +6,7 @@ import (
 
 // 修改实例所属项目
 // https://cloud.tencent.com/document/api/213/15746
+
 type ModifyInstancesProjectRequest struct {
 	// 一个或多个待操作的实例ID。可通过DescribeInstances API返回值中的InstanceId获取。每次请求允许操作的实例数量上限是100。
 	InstanceIds []*string `name:"InstanceIds"`

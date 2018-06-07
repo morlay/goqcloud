@@ -6,6 +6,7 @@ import (
 
 // 新增漏洞误报信息
 // https://cloud.tencent.com/document/api/692/16740
+
 type CreateVulsMisinformationRequest struct {
 	// 区域
 	Region string `name:"Region"`

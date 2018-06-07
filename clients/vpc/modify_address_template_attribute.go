@@ -6,6 +6,7 @@ import (
 
 // 修改IP地址模板
 // https://cloud.tencent.com/document/api/215/16720
+
 type ModifyAddressTemplateAttributeRequest struct {
 	// IP地址模板实例ID，例如：ipm-mdunqeb6。
 	AddressTemplateId string `name:"AddressTemplateId"`

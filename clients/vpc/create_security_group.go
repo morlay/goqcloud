@@ -6,6 +6,7 @@ import (
 
 // 创建安全组
 // https://cloud.tencent.com/document/api/215/15806
+
 type CreateSecurityGroupRequest struct {
 	// 安全组备注，最多100个字符。
 	GroupDescription string `name:"GroupDescription"`

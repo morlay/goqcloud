@@ -6,6 +6,7 @@ import (
 
 // 修改安全组属性
 // https://cloud.tencent.com/document/api/215/15805
+
 type ModifySecurityGroupAttributeRequest struct {
 	// 安全组备注，最多100个字符。
 	GroupDescription *string `name:"GroupDescription,omitempty"`

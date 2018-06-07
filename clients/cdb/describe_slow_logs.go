@@ -6,6 +6,7 @@ import (
 
 // 查询慢查询日志
 // https://cloud.tencent.com/document/api/236/15845
+
 type DescribeSlowLogsRequest struct {
 	// 实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
 	InstanceId string `name:"InstanceId"`

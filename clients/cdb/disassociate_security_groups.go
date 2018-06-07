@@ -6,6 +6,7 @@ import (
 
 // 安全组批量解绑云资源
 // https://cloud.tencent.com/document/api/236/15851
+
 type DisassociateSecurityGroupsRequest struct {
 	// 实例ID列表，一个或者多个实例Id组成的数组。
 	InstanceIds []*string `name:"InstanceIds"`

@@ -1,6 +1,7 @@
 package scf
 
 // 运行函数的返回
+
 type Result struct {
 	// 表示函数的计费耗时，单位是毫秒，异步调用返回为空
 	BillDuration int64 `json:"BillDuration"`

@@ -234,7 +234,7 @@ func (api *API) WriteInvoke(file *codegen.File) {
 			codegen.Var(codegen.Type(file.Use("github.com/morlay/goqcloud", "Client")), "client"),
 		).Return(
 			codegen.Var(codegen.Star(codegen.Type(api.Response.Name))),
-			codegen.Var(codegen.Star(codegen.Error)),
+			codegen.Var(codegen.Error),
 		).MethodOf(
 			codegen.Var(codegen.Star(codegen.Type(api.Parameters.Name)), "req"),
 		).Named("Invoke").Do(

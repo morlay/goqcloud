@@ -6,6 +6,7 @@ import (
 
 // 查询任务详情
 // https://cloud.tencent.com/document/api/599/15905
+
 type DescribeTaskRequest struct {
 	// 作业ID
 	JobId string `name:"JobId"`

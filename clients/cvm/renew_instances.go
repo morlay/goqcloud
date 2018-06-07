@@ -6,6 +6,7 @@ import (
 
 // 续费实例
 // https://cloud.tencent.com/document/api/213/15740
+
 type RenewInstancesRequest struct {
 	// 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。
 	InstanceChargePrepaid InstanceChargePrepaid `name:"InstanceChargePrepaid"`

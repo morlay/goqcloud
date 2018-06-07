@@ -6,6 +6,7 @@ import (
 
 // 查询代理商返佣信息
 // https://cloud.tencent.com/document/api/563/16041
+
 type DescribeRebateInfosRequest struct {
 	// 限制数目
 	Limit *int64 `name:"Limit,omitempty"`

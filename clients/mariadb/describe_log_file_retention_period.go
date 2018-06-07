@@ -6,6 +6,7 @@ import (
 
 // 查看备份日志备份天数
 // https://cloud.tencent.com/document/api/237/16152
+
 type DescribeLogFileRetentionPeriodRequest struct {
 	// 实例 ID，形如：tdsql-ow728lmc。
 	InstanceId string `name:"InstanceId"`

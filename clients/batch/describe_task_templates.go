@@ -6,6 +6,7 @@ import (
 
 // 获取任务模板
 // https://cloud.tencent.com/document/api/599/15902
+
 type DescribeTaskTemplatesRequest struct {
 	// 过滤条件
 	Filters []*Filter `name:"Filters,omitempty"`

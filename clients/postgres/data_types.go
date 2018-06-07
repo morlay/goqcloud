@@ -4,19 +4,8 @@ import (
 	time "time"
 )
 
-// 描述地域的编码和状态等信息
-type RegionInfo struct {
-	// 该地域对应的英文名称
-	Region string `json:"Region"`
-	// 该地域对应的数字编号
-	RegionId int64 `json:"RegionId"`
-	// 该地域对应的中文名称
-	RegionName string `json:"RegionName"`
-	// 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用
-	RegionState string `json:"RegionState"`
-}
-
 // 描述某个地域下某个可用区的可售卖规格详细信息。
+
 type SpecInfo struct {
 	// 地域英文编码，对应RegionSet的Region字段
 	Region string `json:"Region"`
@@ -27,6 +16,7 @@ type SpecInfo struct {
 }
 
 // 描述一种规格的信息信息
+
 type SpecItemInfo struct {
 	// CPU核数
 	Cpu []*int64 `json:"Cpu"`
@@ -49,6 +39,7 @@ type SpecItemInfo struct {
 }
 
 // 描述可用区的编码和状态信息
+
 type ZoneInfo struct {
 	// 该可用区的英文名称
 	Zone string `json:"Zone"`
@@ -61,6 +52,7 @@ type ZoneInfo struct {
 }
 
 // 描述实例的详细信息
+
 type DBInstance struct {
 	// 是否自动续费，1：自动续费，0：不自动续费
 	AutoRenew int64 `json:"AutoRenew"`
@@ -111,6 +103,7 @@ type DBInstance struct {
 }
 
 // 描述实例的网络连接信息
+
 type DBInstanceNetInfo struct {
 	// DNS域名
 	Address string `json:"Address"`
@@ -125,4 +118,18 @@ type DBInstanceNetInfo struct {
 }
 
 // 描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称等
+
 type Filter *Filter
+
+// 描述地域的编码和状态等信息
+
+type RegionInfo struct {
+	// 该地域对应的英文名称
+	Region string `json:"Region"`
+	// 该地域对应的数字编号
+	RegionId int64 `json:"RegionId"`
+	// 该地域对应的中文名称
+	RegionName string `json:"RegionName"`
+	// 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用
+	RegionState string `json:"RegionState"`
+}

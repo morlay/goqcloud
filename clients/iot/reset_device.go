@@ -6,6 +6,7 @@ import (
 
 // 重置设备
 // https://cloud.tencent.com/document/api/568/16526
+
 type ResetDeviceRequest struct {
 	// 设备名称
 	DeviceName string `name:"DeviceName"`

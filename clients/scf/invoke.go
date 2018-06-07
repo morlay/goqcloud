@@ -6,6 +6,7 @@ import (
 
 // 运行函数
 // https://cloud.tencent.com/document/api/583/17243
+
 type InvokeRequest struct {
 	// 运行函数时的参数，以json格式传入，最大支持的参数长度是 1M。
 	ClientContext *string `name:"ClientContext,omitempty"`

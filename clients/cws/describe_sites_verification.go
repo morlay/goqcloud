@@ -6,6 +6,7 @@ import (
 
 // 查看站点列表的验证信息列表
 // https://cloud.tencent.com/document/api/692/16753
+
 type DescribeSitesVerificationRequest struct {
 	// 区域
 	Region string `name:"Region"`

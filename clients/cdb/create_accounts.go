@@ -6,6 +6,7 @@ import (
 
 // 创建云数据库的账户
 // https://cloud.tencent.com/document/api/236/17502
+
 type CreateAccountsRequest struct {
 	// 云数据库账号。
 	Accounts []*Account `name:"Accounts"`

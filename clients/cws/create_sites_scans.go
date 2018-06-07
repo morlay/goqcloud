@@ -6,6 +6,7 @@ import (
 
 // 新增站点扫描任务
 // https://cloud.tencent.com/document/api/692/16749
+
 type CreateSitesScansRequest struct {
 	// 扫描速率限制，每秒发送X个HTTP请求
 	RateLimit int64 `name:"RateLimit"`

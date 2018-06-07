@@ -6,6 +6,7 @@ import (
 
 // 修改云数据库安全组
 // https://cloud.tencent.com/document/api/236/15853
+
 type ModifyDbInstanceSecurityGroupsRequest struct {
 	// 实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
 	InstanceId string `name:"InstanceId"`

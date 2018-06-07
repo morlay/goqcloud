@@ -6,6 +6,7 @@ import (
 
 // 弹性网卡申请内网 IP
 // https://cloud.tencent.com/document/api/215/15813
+
 type AssignPrivateIPAddressesRequest struct {
 	// 弹性网卡实例ID，例如：eni-m6dyj72l。
 	NetworkInterfaceId string `name:"NetworkInterfaceId"`

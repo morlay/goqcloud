@@ -6,6 +6,7 @@ import (
 
 // 解绑密钥对
 // https://cloud.tencent.com/document/api/213/15697
+
 type DisassociateInstancesKeyPairsRequest struct {
 	// 是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：TRUE：表示在正常关机失败后进行强制关机。FALSE：表示在正常关机失败后不进行强制关机。默认取值：FALSE。
 	ForceStop *bool `name:"ForceStop,omitempty"`

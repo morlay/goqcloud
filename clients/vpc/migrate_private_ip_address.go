@@ -6,6 +6,7 @@ import (
 
 // 弹性网卡内网IP迁移
 // https://cloud.tencent.com/document/api/215/15820
+
 type MigratePrivateIPAddressRequest struct {
 	// 待迁移的目的弹性网卡实例ID。
 	DestinationNetworkInterfaceId string `name:"DestinationNetworkInterfaceId"`

@@ -6,6 +6,7 @@ import (
 
 // 新增设备
 // https://cloud.tencent.com/document/api/568/16465
+
 type AddDeviceRequest struct {
 	// 设备名称，唯一标识某产品下的一个设备
 	DeviceName string `name:"DeviceName"`

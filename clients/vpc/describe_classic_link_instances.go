@@ -6,6 +6,7 @@ import (
 
 // 查询基础网络互通列表
 // https://cloud.tencent.com/document/api/215/15776
+
 type DescribeClassicLinkInstancesRequest struct {
 	// 过滤条件。vpc-id - String - （过滤条件）VPC实例ID。vm-ip - String - （过滤条件）基础网络云主机IP。
 	Filters []*FilterObject `name:"Filters,omitempty"`

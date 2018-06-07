@@ -6,6 +6,7 @@ import (
 
 // 获取批量计算可用的CVM机型配置信息
 // https://cloud.tencent.com/document/api/599/15887
+
 type DescribeAvailableCvmInstanceTypesRequest struct {
 	// 过滤条件
 	Filters []*Filter `name:"Filters,omitempty"`

@@ -6,6 +6,7 @@ import (
 
 // 修改用户配置的属性
 // https://cloud.tencent.com/document/api/692/16758
+
 type ModifyConfigAttributeRequest struct {
 	// 漏洞告警通知等级，4位分别代表：高危、中危、低危、提示
 	NoticeLevel *string `name:"NoticeLevel,omitempty"`

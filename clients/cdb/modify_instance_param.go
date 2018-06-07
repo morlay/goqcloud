@@ -6,6 +6,7 @@ import (
 
 // 修改实例参数
 // https://cloud.tencent.com/document/api/236/15860
+
 type ModifyInstanceParamRequest struct {
 	// 实例短Id列表。
 	InstanceIds []*string `name:"InstanceIds"`

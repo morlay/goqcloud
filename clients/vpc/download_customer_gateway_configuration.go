@@ -6,6 +6,7 @@ import (
 
 // 下载VPN通道配置
 // https://cloud.tencent.com/document/api/215/17513
+
 type DownloadCustomerGatewayConfigurationRequest struct {
 	// 对端网关厂商信息对象，可通过DescribeCustomerGatewayVendors获取。
 	CustomerGatewayVendor CustomerGatewayVendor `name:"CustomerGatewayVendor"`

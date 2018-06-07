@@ -6,6 +6,7 @@ import (
 
 // 修改VPN网关属性
 // https://cloud.tencent.com/document/api/215/17507
+
 type ModifyVpnGatewayAttributeRequest struct {
 	// VPN网关计费模式，目前只支持预付费（即包年包月）到后付费（即按量计费）的转换。即参数只支持：POSTPAID_BY_HOUR。
 	InstanceChargeType *string `name:"InstanceChargeType,omitempty"`

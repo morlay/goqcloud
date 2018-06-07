@@ -6,6 +6,7 @@ import (
 
 // 获取转发规则列表
 // https://cloud.tencent.com/document/api/568/16462
+
 type GetRulesRequest struct {
 	// 长度
 	Length *int64 `name:"Length,omitempty"`

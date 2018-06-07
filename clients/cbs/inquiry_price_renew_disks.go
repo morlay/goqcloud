@@ -6,6 +6,7 @@ import (
 
 // 续费云硬盘询价
 // https://cloud.tencent.com/document/api/362/16317
+
 type InquiryPriceRenewDisksRequest struct {
 	// 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月云盘的购买时长。如果在该参数中指定CurInstanceDeadline，则会按对齐到子机到期时间来续费。如果是批量续费询价，该参数与Disks参数一一对应，元素数量需保持一致。
 	DiskChargePrepaids []*DiskChargePrepaid `name:"DiskChargePrepaids,omitempty"`

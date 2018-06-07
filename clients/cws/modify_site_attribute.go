@@ -6,6 +6,7 @@ import (
 
 // 修改站点的属性
 // https://cloud.tencent.com/document/api/692/16754
+
 type ModifySiteAttributeRequest struct {
 	// 站点名称
 	Name *string `name:"Name,omitempty"`

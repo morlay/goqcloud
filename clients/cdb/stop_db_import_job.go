@@ -6,6 +6,7 @@ import (
 
 // 终止数据导入任务
 // https://cloud.tencent.com/document/api/236/15857
+
 type StopDbImportJobRequest struct {
 	// 异步任务的请求ID。
 	AsyncRequestId string `name:"AsyncRequestId"`

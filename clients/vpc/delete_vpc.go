@@ -6,6 +6,7 @@ import (
 
 // 删除VPC
 // https://cloud.tencent.com/document/api/215/15775
+
 type DeleteVpcRequest struct {
 	// 区域
 	Region string `name:"Region"`

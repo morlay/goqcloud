@@ -6,6 +6,7 @@ import (
 
 // 关闭外网访问
 // https://cloud.tencent.com/document/api/237/16179
+
 type CloseDbExtranetAccessRequest struct {
 	// 待关闭外网访问的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
 	InstanceId string `name:"InstanceId"`

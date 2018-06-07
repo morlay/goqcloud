@@ -6,6 +6,7 @@ import (
 
 // 重置路由表名称和路由策略
 // https://cloud.tencent.com/document/api/215/15769
+
 type ResetRoutesRequest struct {
 	// 区域
 	Region string `name:"Region"`

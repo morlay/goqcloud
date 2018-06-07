@@ -6,6 +6,7 @@ import (
 
 // 查询云硬盘列表
 // https://cloud.tencent.com/document/api/362/16315
+
 type DescribeDisksRequest struct {
 	// 按照一个或者多个云硬盘ID查询。云硬盘ID形如：disk-11112222，此参数的具体格式可参考API简介的ids.N一节）。参数不支持同时指定DiskIds和Filters。
 	DiskIds []*string `name:"DiskIds,omitempty"`

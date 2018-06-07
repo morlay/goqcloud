@@ -6,6 +6,7 @@ import (
 
 // 修改数据库账号备注
 // https://cloud.tencent.com/document/api/237/16170
+
 type ModifyAccountDescriptionRequest struct {
 	// 新的账号备注，长度 0~256。
 	Description string `name:"Description"`

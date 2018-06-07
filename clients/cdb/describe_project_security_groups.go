@@ -6,6 +6,7 @@ import (
 
 // 查询项目安全组信息
 // https://cloud.tencent.com/document/api/236/15850
+
 type DescribeProjectSecurityGroupsRequest struct {
 	// 项目ID。
 	ProjectId int64 `name:"ProjectId"`

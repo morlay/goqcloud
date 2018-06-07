@@ -6,6 +6,7 @@ import (
 
 // 修改镜像属性
 // https://cloud.tencent.com/document/api/213/15713
+
 type ModifyImageAttributeRequest struct {
 	// 设置新的镜像描述；必须满足下列限制：  不得超过60个字符。
 	ImageDescription *string `name:"ImageDescription,omitempty"`

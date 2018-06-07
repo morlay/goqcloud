@@ -6,6 +6,7 @@ import (
 
 // 修改实例所属项目
 // https://cloud.tencent.com/document/api/237/16176
+
 type ModifyDbInstancesProjectRequest struct {
 	// 待修改的实例ID列表。实例 ID 形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
 	InstanceIds []*string `name:"InstanceIds"`

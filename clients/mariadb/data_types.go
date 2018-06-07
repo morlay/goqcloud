@@ -4,55 +4,8 @@ import (
 	time "time"
 )
 
-// 慢查询条目信息
-type SlowLogData struct {
-	// 语句校验和，用于查询详情
-	CheckSum string `json:"CheckSum"`
-	// 数据库名称
-	Db string `json:"Db"`
-	// 抽象的SQL语句
-	FingerPrint string `json:"FingerPrint"`
-	// 平均的锁时间
-	LockTimeAvg string `json:"LockTimeAvg"`
-	// 最大锁时间
-	LockTimeMax string `json:"LockTimeMax"`
-	// 最小锁时间
-	LockTimeMin string `json:"LockTimeMin"`
-	// 锁时间总和
-	LockTimeSum string `json:"LockTimeSum"`
-	// 查询次数
-	QueryCount string `json:"QueryCount"`
-	// 平均查询时间
-	QueryTimeAvg string `json:"QueryTimeAvg"`
-	// 最大查询时间
-	QueryTimeMax string `json:"QueryTimeMax"`
-	// 最小查询时间
-	QueryTimeMin string `json:"QueryTimeMin"`
-	// 查询时间总和
-	QueryTimeSum string `json:"QueryTimeSum"`
-	// 扫描行数
-	RowsExaminedSum string `json:"RowsExaminedSum"`
-	// 发送行数
-	RowsSentSum string `json:"RowsSentSum"`
-	// 首次执行时间
-	TsMax time.Time `json:"TsMax"`
-	// 最后执行时间
-	TsMin time.Time `json:"TsMin"`
-	// 帐号
-	User string `json:"User"`
-}
-
-// 可用区信息
-type ZonesInfo struct {
-	// 可用区英文ID
-	Zone string `json:"Zone"`
-	// 可用区数字ID
-	ZoneId int64 `json:"ZoneId"`
-	// 可用区中文名
-	ZoneName string `json:"ZoneName"`
-}
-
 // 描述云数据库实例的详细信息。
+
 type DBInstance struct {
 	// 实例所属应用 Id
 	AppId int64 `json:"AppId"`
@@ -102,43 +55,17 @@ type DBInstance struct {
 	Zone string `json:"Zone"`
 }
 
-// 修改参数结果
-type ParamModifyResult struct {
-	// 参数修改结果。0表示修改成功；-1表示修改失败；-2表示该参数值非法
-	Code int64 `json:"Code"`
-	// 修改参数名字
+// 云数据库参数信息。
+
+type DBParamValue struct {
+	// 参数名称
 	Param string `json:"Param"`
-}
-
-// DB资源使用情况监控指标集合
-type ResourceUsageMonitorSet struct {
-	// binlog日志磁盘可用空间,单位GB
-	BinlogDiskAvailable MonitorData `json:"BinlogDiskAvailable"`
-	// CPU利用率
-	CpuUsageRate MonitorData `json:"CpuUsageRate"`
-	// 磁盘可用空间,单位GB
-	DataDiskAvailable MonitorIntData `json:"DataDiskAvailable"`
-	// 内存可用空间,单位GB
-	MemAvailable MonitorData `json:"MemAvailable"`
-}
-
-// 云数据库账号信息
-type DBAccount struct {
-	// 创建时间
-	CreateTime time.Time `json:"CreateTime"`
-	// 用户备注信息
-	Description string `json:"Description"`
-	// 用户可以从哪台主机登录（对应 MySQL 用户的 host 字段，UserName + Host 唯一标识一个用户，IP形式，IP段以%结尾；支持填入%；为空默认等于%）
-	Host string `json:"Host"`
-	// 只读标记，0：否， 1：该账号的sql请求优先选择备机执行，备机不可用时选择主机执行，2：优先选择备机执行，备机不可用时操作失败。
-	ReadOnly int64 `json:"ReadOnly"`
-	// 最后更新时间
-	UpdateTime time.Time `json:"UpdateTime"`
-	// 用户名
-	UserName string `json:"UserName"`
+	// 参数值
+	Value string `json:"Value"`
 }
 
 // 按机型归类的实例可售卖规格信息
+
 type InstanceSpec struct {
 	// 设备型号
 	Machine string `json:"Machine"`
@@ -146,17 +73,19 @@ type InstanceSpec struct {
 	SpecInfos []*SpecConfigInfo `json:"SpecInfos"`
 }
 
-// 拉取的日志信息
-type LogFileInfo struct {
-	// 文件长度
-	Length int64 `json:"Length"`
-	// Log最后修改时间
-	Mtime int64 `json:"Mtime"`
-	// 下载Log时用到的统一资源标识符
-	Uri int64 `json:"Uri"`
+// 参数约束
+
+type ParamConstraint struct {
+	// 约束类型为enum时的可选值列表
+	Enum *string `json:"Enum,omitempty"`
+	// 约束类型为section时的范围
+	Range *ConstraintRange `json:"Range,omitempty"`
+	// 约束类型,如枚举enum，区间section
+	Type string `json:"Type"`
 }
 
 // DB参数描述
+
 type ParamDesc struct {
 	// 参数限制
 	Constraint ParamConstraint `json:"Constraint"`
@@ -171,6 +100,7 @@ type ParamDesc struct {
 }
 
 // DB性能监控指标集合
+
 type PerformanceMonitorSet struct {
 	// 活跃连接数
 	ConnActive MonitorData `json:"ConnActive"`
@@ -194,15 +124,19 @@ type PerformanceMonitorSet struct {
 	UpdateTotal MonitorData `json:"UpdateTotal"`
 }
 
-// 分片节点可用区选择
-type ZoneChooseInfo struct {
-	// 主可用区
-	MasterZone ZonesInfo `json:"MasterZone"`
-	// 可选的从可用区
-	SlaveZones []*ZonesInfo `json:"SlaveZones"`
+// 可用区信息
+
+type ZonesInfo struct {
+	// 可用区英文ID
+	Zone string `json:"Zone"`
+	// 可用区数字ID
+	ZoneId int64 `json:"ZoneId"`
+	// 可用区中文名
+	ZoneName string `json:"ZoneName"`
 }
 
 // 约束类型值的范围
+
 type ConstraintRange struct {
 	// 约束类型为section时的最大值
 	Max string `json:"Max"`
@@ -210,15 +144,91 @@ type ConstraintRange struct {
 	Min string `json:"Min"`
 }
 
-// 云数据库参数信息。
-type DBParamValue struct {
-	// 参数名称
-	Param string `json:"Param"`
-	// 参数值
-	Value string `json:"Value"`
+// 拉取的日志信息
+
+type LogFileInfo struct {
+	// 文件长度
+	Length int64 `json:"Length"`
+	// Log最后修改时间
+	Mtime int64 `json:"Mtime"`
+	// 下载Log时用到的统一资源标识符
+	Uri int64 `json:"Uri"`
+}
+
+// 监控数据
+
+type MonitorData struct {
+	// 监控数据
+	Data []*float64 `json:"Data"`
+	// 结束时间，形如 2018-03-24 23:59:59
+	EndTime time.Time `json:"EndTime"`
+	// 起始时间，形如 2018-03-24 23:59:59
+	StartTime time.Time `json:"StartTime"`
+}
+
+// DB资源使用情况监控指标集合
+
+type ResourceUsageMonitorSet struct {
+	// binlog日志磁盘可用空间,单位GB
+	BinlogDiskAvailable MonitorData `json:"BinlogDiskAvailable"`
+	// CPU利用率
+	CpuUsageRate MonitorData `json:"CpuUsageRate"`
+	// 磁盘可用空间,单位GB
+	DataDiskAvailable MonitorIntData `json:"DataDiskAvailable"`
+	// 内存可用空间,单位GB
+	MemAvailable MonitorData `json:"MemAvailable"`
+}
+
+// 慢查询条目信息
+
+type SlowLogData struct {
+	// 语句校验和，用于查询详情
+	CheckSum string `json:"CheckSum"`
+	// 数据库名称
+	Db string `json:"Db"`
+	// 抽象的SQL语句
+	FingerPrint string `json:"FingerPrint"`
+	// 平均的锁时间
+	LockTimeAvg string `json:"LockTimeAvg"`
+	// 最大锁时间
+	LockTimeMax string `json:"LockTimeMax"`
+	// 最小锁时间
+	LockTimeMin string `json:"LockTimeMin"`
+	// 锁时间总和
+	LockTimeSum string `json:"LockTimeSum"`
+	// 查询次数
+	QueryCount string `json:"QueryCount"`
+	// 平均查询时间
+	QueryTimeAvg string `json:"QueryTimeAvg"`
+	// 最大查询时间
+	QueryTimeMax string `json:"QueryTimeMax"`
+	// 最小查询时间
+	QueryTimeMin string `json:"QueryTimeMin"`
+	// 查询时间总和
+	QueryTimeSum string `json:"QueryTimeSum"`
+	// 扫描行数
+	RowsExaminedSum string `json:"RowsExaminedSum"`
+	// 发送行数
+	RowsSentSum string `json:"RowsSentSum"`
+	// 首次执行时间
+	TsMax time.Time `json:"TsMax"`
+	// 最后执行时间
+	TsMin time.Time `json:"TsMin"`
+	// 帐号
+	User string `json:"User"`
+}
+
+// 分片节点可用区选择
+
+type ZoneChooseInfo struct {
+	// 主可用区
+	MasterZone ZonesInfo `json:"MasterZone"`
+	// 可选的从可用区
+	SlaveZones []*ZonesInfo `json:"SlaveZones"`
 }
 
 // 订单信息
+
 type Deal struct {
 	// 订单号
 	DealName string `json:"DealName"`
@@ -232,17 +242,28 @@ type Deal struct {
 	Quantity int64 `json:"Quantity"`
 }
 
-// 参数约束
-type ParamConstraint struct {
-	// 约束类型为enum时的可选值列表
-	Enum *string `json:"Enum,omitempty"`
-	// 约束类型为section时的范围
-	Range *ConstraintRange `json:"Range,omitempty"`
-	// 约束类型,如枚举enum，区间section
-	Type string `json:"Type"`
+// 云数据库实例备份时间配置信息
+
+type DBBackupTimeConfig struct {
+	// 每天备份执行的区间的结束时间，格式 mm:ss，形如 23:00
+	EndBackupTime string `json:"EndBackupTime"`
+	// 实例 Id
+	InstanceId string `json:"InstanceId"`
+	// 每天备份执行的区间的开始时间，格式 mm:ss，形如 22:00
+	StartBackupTime string `json:"StartBackupTime"`
+}
+
+// 修改参数结果
+
+type ParamModifyResult struct {
+	// 参数修改结果。0表示修改成功；-1表示修改失败；-2表示该参数值非法
+	Code int64 `json:"Code"`
+	// 修改参数名字
+	Param string `json:"Param"`
 }
 
 // 售卖可用区信息
+
 type RegionInfo struct {
 	// 可选择的主可用区和从可用区
 	AvailableChoice []*ZoneChooseInfo `json:"AvailableChoice"`
@@ -256,7 +277,25 @@ type RegionInfo struct {
 	ZoneList []*ZonesInfo `json:"ZoneList"`
 }
 
+// 云数据库账号信息
+
+type DBAccount struct {
+	// 创建时间
+	CreateTime time.Time `json:"CreateTime"`
+	// 用户备注信息
+	Description string `json:"Description"`
+	// 用户可以从哪台主机登录（对应 MySQL 用户的 host 字段，UserName + Host 唯一标识一个用户，IP形式，IP段以%结尾；支持填入%；为空默认等于%）
+	Host string `json:"Host"`
+	// 只读标记，0：否， 1：该账号的sql请求优先选择备机执行，备机不可用时选择主机执行，2：优先选择备机执行，备机不可用时操作失败。
+	ReadOnly int64 `json:"ReadOnly"`
+	// 最后更新时间
+	UpdateTime time.Time `json:"UpdateTime"`
+	// 用户名
+	UserName string `json:"UserName"`
+}
+
 // 实例可售卖规格详细信息，创建实例和扩容实例时 Pid+MemSize 唯一确定一种售卖规格，磁盘大小可用区间为[MinDataDisk,MaxDataDisk]
+
 type SpecConfigInfo struct {
 	// 设备型号
 	Machine string `json:"Machine"`
@@ -276,27 +315,8 @@ type SpecConfigInfo struct {
 	SuitInfo string `json:"SuitInfo"`
 }
 
-// 云数据库实例备份时间配置信息
-type DBBackupTimeConfig struct {
-	// 每天备份执行的区间的结束时间，格式 mm:ss，形如 23:00
-	EndBackupTime string `json:"EndBackupTime"`
-	// 实例 Id
-	InstanceId string `json:"InstanceId"`
-	// 每天备份执行的区间的开始时间，格式 mm:ss，形如 22:00
-	StartBackupTime string `json:"StartBackupTime"`
-}
-
-// 监控数据
-type MonitorData struct {
-	// 监控数据
-	Data []*float64 `json:"Data"`
-	// 结束时间，形如 2018-03-24 23:59:59
-	EndTime time.Time `json:"EndTime"`
-	// 起始时间，形如 2018-03-24 23:59:59
-	StartTime time.Time `json:"StartTime"`
-}
-
 // 整形监控数据
+
 type MonitorIntData struct {
 	// 监控数据
 	Data int64 `json:"Data"`

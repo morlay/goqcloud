@@ -6,6 +6,7 @@ import (
 
 // 删除作业
 // https://cloud.tencent.com/document/api/599/15906
+
 type DeleteJobRequest struct {
 	// 作业ID
 	JobId string `name:"JobId"`

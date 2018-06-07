@@ -6,6 +6,7 @@ import (
 
 // 弹性网卡迁移
 // https://cloud.tencent.com/document/api/215/15821
+
 type MigrateNetworkInterfaceRequest struct {
 	// 待迁移的目的CVM实例ID。
 	DestinationInstanceId string `name:"DestinationInstanceId"`

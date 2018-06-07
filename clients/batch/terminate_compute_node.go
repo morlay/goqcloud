@@ -6,6 +6,7 @@ import (
 
 // 销毁计算节点
 // https://cloud.tencent.com/document/api/599/15895
+
 type TerminateComputeNodeRequest struct {
 	// 计算节点ID
 	ComputeNodeId string `name:"ComputeNodeId"`

@@ -6,6 +6,7 @@ import (
 
 // 查询密钥对列表
 // https://cloud.tencent.com/document/api/213/15699
+
 type DescribeKeyPairsRequest struct {
 	// 过滤条件。 project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可以通过项目列表查询项目ID，或者调用接口 DescribeProject，取返回信息中的projectId获取项目ID。 key-name - String - 是否必填：否 -（过滤条件）按照密钥对名称过滤。参数不支持同时指定 KeyIds 和 Filters。
 	Filters []*Filter `name:"Filters,omitempty"`

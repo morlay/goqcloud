@@ -6,6 +6,7 @@ import (
 
 // 查看镜像分享信息
 // https://cloud.tencent.com/document/api/213/15712
+
 type DescribeImageSharePermissionRequest struct {
 	// 需要共享的镜像Id
 	ImageId string `name:"ImageId"`

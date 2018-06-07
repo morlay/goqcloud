@@ -6,6 +6,7 @@ import (
 
 // 查询售卖可用区
 // https://cloud.tencent.com/document/api/409/16769
+
 type DescribeZonesRequest struct {
 	// 区域
 	Region string `name:"Region"`

@@ -6,6 +6,7 @@ import (
 
 // 创建DCDB分布式实例
 // https://cloud.tencent.com/document/api/557/16135
+
 type CreateDcdbInstanceRequest struct {
 	// 是否自动使用代金券进行支付，默认不使用。
 	AutoVoucher *bool `name:"AutoVoucher,omitempty"`

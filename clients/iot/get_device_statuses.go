@@ -6,6 +6,7 @@ import (
 
 // 批量获取设备状态
 // https://cloud.tencent.com/document/api/568/16524
+
 type GetDeviceStatusesRequest struct {
 	// 设备名称列表（单次限制1000个设备）
 	DeviceNames []*string `name:"DeviceNames"`

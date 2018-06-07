@@ -6,6 +6,7 @@ import (
 
 // 获取日志列表
 // https://cloud.tencent.com/document/api/237/16162
+
 type DescribeDbLogFilesRequest struct {
 	// 实例 ID，形如：tdsql-ow728lmc。
 	InstanceId string `name:"InstanceId"`

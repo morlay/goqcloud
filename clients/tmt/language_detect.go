@@ -6,6 +6,7 @@ import (
 
 // 语种识别
 // https://cloud.tencent.com/document/api/551/15620
+
 type LanguageDetectRequest struct {
 	// 项目id
 	ProjectId int64 `name:"ProjectId"`

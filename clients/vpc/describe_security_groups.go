@@ -6,6 +6,7 @@ import (
 
 // 查看安全组
 // https://cloud.tencent.com/document/api/215/15808
+
 type DescribeSecurityGroupsRequest struct {
 	// 过滤条件，参数不支持同时指定SecurityGroupIds和Filters。project-id - Integer - （过滤条件）项目id。security-group-name - String - （过滤条件）安全组名称。
 	Filters []*Filter `name:"Filters,omitempty"`

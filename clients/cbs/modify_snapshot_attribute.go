@@ -6,6 +6,7 @@ import (
 
 // 修改快照信息
 // https://cloud.tencent.com/document/api/362/15650
+
 type ModifySnapshotAttributeRequest struct {
 	// 快照的保留时间，FALSE表示非永久保留，TRUE表示永久保留。仅支持将非永久快照修改为永久快照。
 	IsPermanent *bool `name:"IsPermanent,omitempty"`

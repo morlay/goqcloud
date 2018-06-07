@@ -6,6 +6,7 @@ import (
 
 // 查询账号权限
 // https://cloud.tencent.com/document/api/237/16164
+
 type DescribeAccountPrivilegesRequest struct {
 	// 当 Type=table 时，ColName 为 * 表示查询表的权限，如果为具体字段名，表示查询对应字段的权限
 	ColName *string `name:"ColName,omitempty"`

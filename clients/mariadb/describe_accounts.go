@@ -6,6 +6,7 @@ import (
 
 // 查询账号列表
 // https://cloud.tencent.com/document/api/237/16167
+
 type DescribeAccountsRequest struct {
 	// 实例ID，形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例详情获得。
 	InstanceId string `name:"InstanceId"`

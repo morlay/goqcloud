@@ -6,6 +6,7 @@ import (
 
 // 修改云数据库实例账号的密码
 // https://cloud.tencent.com/document/api/236/17497
+
 type ModifyAccountPasswordRequest struct {
 	// 云数据库账号。
 	Accounts []*Account `name:"Accounts"`

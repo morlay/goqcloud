@@ -6,6 +6,7 @@ import (
 
 // 获取设备信息
 // https://cloud.tencent.com/document/api/568/16467
+
 type GetDeviceRequest struct {
 	// 设备名称
 	DeviceName string `name:"DeviceName"`

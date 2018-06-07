@@ -6,6 +6,7 @@ import (
 
 // 查看实例状态列表
 // https://cloud.tencent.com/document/api/213/15738
+
 type DescribeInstancesStatusRequest struct {
 	// 按照一个或者多个实例ID查询。实例ID形如：ins-11112222。此参数的具体格式可参考API简介的id.N一节）。每次请求的实例的上限为100。
 	InstanceIds []*string `name:"InstanceIds,omitempty"`

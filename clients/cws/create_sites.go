@@ -6,6 +6,7 @@ import (
 
 // 新增站点
 // https://cloud.tencent.com/document/api/692/16748
+
 type CreateSitesRequest struct {
 	// 区域
 	Region string `name:"Region"`

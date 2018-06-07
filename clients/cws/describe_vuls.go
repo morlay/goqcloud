@@ -6,6 +6,7 @@ import (
 
 // 查看漏洞列表
 // https://cloud.tencent.com/document/api/692/16741
+
 type DescribeVulsRequest struct {
 	// 过滤条件
 	Filters []*Filter `name:"Filters,omitempty"`

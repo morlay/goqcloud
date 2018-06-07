@@ -6,6 +6,7 @@ import (
 
 // 重置VPN通道
 // https://cloud.tencent.com/document/api/215/17505
+
 type ResetVpnConnectionRequest struct {
 	// 区域
 	Region string `name:"Region"`

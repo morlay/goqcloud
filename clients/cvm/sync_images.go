@@ -6,6 +6,7 @@ import (
 
 // 同步镜像
 // https://cloud.tencent.com/document/api/213/15711
+
 type SyncImagesRequest struct {
 	// 目的同步地域列表；必须满足限制：不能为源地域，必须是一个合法的Region。暂不支持部分地域同步。具体地域参数请参考Region。
 	DestinationRegions []*string `name:"DestinationRegions"`

@@ -6,6 +6,7 @@ import (
 
 // 查询云数据库实例任务列表
 // https://cloud.tencent.com/document/api/236/15848
+
 type DescribeTasksRequest struct {
 	// 异步任务请求ID，执行 CDB 相关操作返回的 AsyncRequestId
 	AsyncRequestId *string `name:"AsyncRequestId,omitempty"`

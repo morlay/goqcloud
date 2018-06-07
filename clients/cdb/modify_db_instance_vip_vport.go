@@ -6,6 +6,7 @@ import (
 
 // 修改云数据库实例的IP和端口号
 // https://cloud.tencent.com/document/api/236/15867
+
 type ModifyDbInstanceVipVportRequest struct {
 	// 目标IP。
 	DstIp *string `name:"DstIp,omitempty"`

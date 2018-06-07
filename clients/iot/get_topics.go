@@ -6,6 +6,7 @@ import (
 
 // 获取Topic列表
 // https://cloud.tencent.com/document/api/568/16447
+
 type GetTopicsRequest struct {
 	// 长度
 	Length *int64 `name:"Length,omitempty"`

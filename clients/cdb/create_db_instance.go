@@ -6,6 +6,7 @@ import (
 
 // 创建云数据库实例（包年包月）
 // https://cloud.tencent.com/document/api/236/15871
+
 type CreateDbInstanceRequest struct {
 	// 自动续费标记，可选值为：0-不自动续费；1-自动续费
 	AutoRenewFlag *int64 `name:"AutoRenewFlag,omitempty"`

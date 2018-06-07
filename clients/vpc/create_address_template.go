@@ -6,6 +6,7 @@ import (
 
 // 创建IP地址模版
 // https://cloud.tencent.com/document/api/215/16708
+
 type CreateAddressTemplateRequest struct {
 	// IP地址模版名称
 	AddressTemplateName string `name:"AddressTemplateName"`

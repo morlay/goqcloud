@@ -6,6 +6,7 @@ import (
 
 // 查询实例带宽配置
 // https://cloud.tencent.com/document/api/213/15734
+
 type DescribeInstanceInternetBandwidthConfigsRequest struct {
 	// 待操作的实例ID。可通过DescribeInstances接口返回值中的InstanceId获取。
 	InstanceId string `name:"InstanceId"`

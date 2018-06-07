@@ -6,6 +6,7 @@ import (
 
 // 退还云硬盘
 // https://cloud.tencent.com/document/api/362/16321
+
 type TerminateDisksRequest struct {
 	// 需退还的云盘ID列表。
 	DiskIds []*string `name:"DiskIds"`

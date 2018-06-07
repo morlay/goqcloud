@@ -6,6 +6,7 @@ import (
 
 // 查看镜像列表
 // https://cloud.tencent.com/document/api/213/15715
+
 type DescribeImagesRequest struct {
 	// 过滤条件，每次请求的Filters的上限为0，Filters.Values的上限为5。参数不可以同时指定ImageIds和Filters。详细的过滤条件如下： image-id - String - 是否必填： 否 - （过滤条件）按照镜像ID进行过滤 image-type - String - 是否必填： 否 - （过滤条件）按照镜像类型进行过滤。取值范围：详见镜像类型。 image-state - String - 是否必填： 否 - （过滤条件）按照镜像状态进行过滤。取值范围：详见镜像状态。
 	Filters []*Filter `name:"Filters,omitempty"`

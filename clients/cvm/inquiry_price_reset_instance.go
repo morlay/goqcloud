@@ -6,6 +6,7 @@ import (
 
 // 重装实例询价
 // https://cloud.tencent.com/document/api/213/15747
+
 type InquiryPriceResetInstanceRequest struct {
 	// 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
 	EnhancedService *EnhancedService `name:"EnhancedService,omitempty"`

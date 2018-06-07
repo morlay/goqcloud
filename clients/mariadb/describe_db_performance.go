@@ -2,19 +2,21 @@ package mariadb
 
 import (
 	github_com_morlay_goqcloud "github.com/morlay/goqcloud"
+	time "time"
 )
 
 // 查看实例性能数据
 // https://cloud.tencent.com/document/api/237/16160
+
 type DescribeDbPerformanceRequest struct {
 	// 结束日期，格式yyyy-mm-dd
-	EndTime `name:"EndTime"`
+	EndTime time.Time `name:"EndTime"`
 	// 实例 ID，形如：tdsql-ow728lmc。
 	InstanceId string `name:"InstanceId"`
 	// 区域
 	Region string `name:"Region"`
 	// 开始日期，格式yyyy-mm-dd
-	StartTime `name:"StartTime"`
+	StartTime time.Time `name:"StartTime"`
 }
 
 func (req *DescribeDbPerformanceRequest) Invoke(client github_com_morlay_goqcloud.Client) (*DescribeDbPerformanceResponse, error) {

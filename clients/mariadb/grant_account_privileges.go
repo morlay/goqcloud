@@ -6,6 +6,7 @@ import (
 
 // 设置账号权限
 // https://cloud.tencent.com/document/api/237/16166
+
 type GrantAccountPrivilegesRequest struct {
 	// 当 Type=table 时，ColName 为 * 表示对表授权，如果为具体字段名，表示对字段授权
 	ColName *string `name:"ColName,omitempty"`

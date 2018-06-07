@@ -4,7 +4,58 @@ import (
 	time "time"
 )
 
+// 升级实例 -- 扩容分片类型
+
+type ExpandShardConfig struct {
+	// 分片ID数组
+	ShardInstanceIds []*string `json:"ShardInstanceIds"`
+	// 分片内存大小，单位 GB
+	ShardMemory int64 `json:"ShardMemory"`
+	// 分片存储大小，单位 GB
+	ShardStorage int64 `json:"ShardStorage"`
+}
+
+// 分片信息
+
+type ShardInfo struct {
+	// 创建时间
+	Createtime string `json:"Createtime"`
+	// 内存大小，单位 GB
+	Memory int64 `json:"Memory"`
+	// 分片数字ID
+	ShardId int64 `json:"ShardId"`
+	// 分片ID
+	ShardInstanceId string `json:"ShardInstanceId"`
+	// 分片Set ID
+	ShardSerialId string `json:"ShardSerialId"`
+	// 状态
+	Status int64 `json:"Status"`
+	// 存储大小，单位 GB
+	Storage int64 `json:"Storage"`
+}
+
+// 分片节点可用区选择
+
+type ShardZoneChooseInfo struct {
+	// 主可用区
+	MasterZone ZonesInfo `json:"MasterZone"`
+	// 可选的从可用区
+	SlaveZones []*ZonesInfo `json:"SlaveZones"`
+}
+
+// 升级实例 -- 新增分片类型
+
+type AddShardConfig struct {
+	// 新增分片的数量
+	ShardCount int64 `json:"ShardCount"`
+	// 分片内存大小，单位 GB
+	ShardMemory int64 `json:"ShardMemory"`
+	// 分片存储大小，单位 GB
+	ShardStorage int64 `json:"ShardStorage"`
+}
+
 // 分布式数据库实例信息
+
 type DCDBInstanceInfo struct {
 	// APPID
 	AppId int64 `json:"AppId"`
@@ -50,25 +101,8 @@ type DCDBInstanceInfo struct {
 	Zone string `json:"Zone"`
 }
 
-// 分片信息
-type ShardInfo struct {
-	// 创建时间
-	Createtime string `json:"Createtime"`
-	// 内存大小，单位 GB
-	Memory int64 `json:"Memory"`
-	// 分片数字ID
-	ShardId int64 `json:"ShardId"`
-	// 分片ID
-	ShardInstanceId string `json:"ShardInstanceId"`
-	// 分片Set ID
-	ShardSerialId string `json:"ShardSerialId"`
-	// 状态
-	Status int64 `json:"Status"`
-	// 存储大小，单位 GB
-	Storage int64 `json:"Storage"`
-}
-
 // 按机型分类的规格配置
+
 type SpecConfig struct {
 	// 规格机型
 	Machine string `json:"Machine"`
@@ -77,6 +111,7 @@ type SpecConfig struct {
 }
 
 // 实例可售卖规格详细信息，创建实例和扩容实例时 NodeCount、Memory 确定售卖规格，硬盘大小可用区间为[MinStorage,MaxStorage]
+
 type SpecConfigInfo struct {
 	// 数据盘规格最大值，单位 GB
 	MaxStorage int64 `json:"MaxStorage"`
@@ -95,6 +130,7 @@ type SpecConfigInfo struct {
 }
 
 // 升级实例 -- 切分分片类型
+
 type SplitShardConfig struct {
 	// 分片ID数组
 	ShardInstanceIds []*string `json:"ShardInstanceIds"`
@@ -107,6 +143,7 @@ type SplitShardConfig struct {
 }
 
 // 可用区信息
+
 type ZonesInfo struct {
 	// 可用区英文ID
 	Zone string `json:"Zone"`
@@ -116,17 +153,8 @@ type ZonesInfo struct {
 	ZoneName string `json:"ZoneName"`
 }
 
-// 升级实例 -- 新增分片类型
-type AddShardConfig struct {
-	// 新增分片的数量
-	ShardCount int64 `json:"ShardCount"`
-	// 分片内存大小，单位 GB
-	ShardMemory int64 `json:"ShardMemory"`
-	// 分片存储大小，单位 GB
-	ShardStorage int64 `json:"ShardStorage"`
-}
-
 // 订单信息
+
 type Deal struct {
 	// 商品数量
 	Count int64 `json:"Count"`
@@ -140,17 +168,8 @@ type Deal struct {
 	OwnerUin string `json:"OwnerUin"`
 }
 
-// 升级实例 -- 扩容分片类型
-type ExpandShardConfig struct {
-	// 分片ID数组
-	ShardInstanceIds []*string `json:"ShardInstanceIds"`
-	// 分片内存大小，单位 GB
-	ShardMemory int64 `json:"ShardMemory"`
-	// 分片存储大小，单位 GB
-	ShardStorage int64 `json:"ShardStorage"`
-}
-
 // 售卖可用区信息
+
 type RegionInfo struct {
 	// 可选择的主可用区和从可用区
 	AvailableChoice []*ShardZoneChooseInfo `json:"AvailableChoice"`
@@ -162,12 +181,4 @@ type RegionInfo struct {
 	RegionName string `json:"RegionName"`
 	// 可用区列表
 	ZoneList []*ZonesInfo `json:"ZoneList"`
-}
-
-// 分片节点可用区选择
-type ShardZoneChooseInfo struct {
-	// 主可用区
-	MasterZone ZonesInfo `json:"MasterZone"`
-	// 可选的从可用区
-	SlaveZones []*ZonesInfo `json:"SlaveZones"`
 }

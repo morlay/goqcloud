@@ -6,6 +6,7 @@ import (
 
 // 查询IP地址模板集合
 // https://cloud.tencent.com/document/api/215/16716
+
 type DescribeAddressTemplateGroupsRequest struct {
 	// 过滤条件。address-template-group-name - String - （过滤条件）IP地址模板集合名称。address-template-group-id - String - （过滤条件）IP地址模板实集合例ID，例如：ipmg-mdunqeb6。
 	Filters []*Filter `name:"Filters,omitempty"`

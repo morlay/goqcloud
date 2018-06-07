@@ -6,6 +6,7 @@ import (
 
 // 向Topic发布消息
 // https://cloud.tencent.com/document/api/568/16453
+
 type PublishMsgRequest struct {
 	// 消息内容
 	Message string `name:"Message"`

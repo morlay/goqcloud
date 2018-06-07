@@ -6,6 +6,7 @@ import (
 
 // 查询子网列表
 // https://cloud.tencent.com/document/api/215/15784
+
 type DescribeSubnetsRequest struct {
 	// 过滤条件，参数不支持同时指定SubnetIds和Filters。subnet-id - String - （过滤条件）Subnet实例名称。vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。cidr-block - String - （过滤条件）vpc的cidr。is-default - Boolean - （过滤条件）是否是默认子网。subnet-name - String - （过滤条件）子网名称。zone - String - （过滤条件）可用区。
 	Filters []*Filter `name:"Filters,omitempty"`

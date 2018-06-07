@@ -6,6 +6,7 @@ import (
 
 // 查询二进制日志
 // https://cloud.tencent.com/document/api/236/15843
+
 type DescribeBinlogsRequest struct {
 	// 实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
 	InstanceId string `name:"InstanceId"`

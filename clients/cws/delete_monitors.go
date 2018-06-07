@@ -6,6 +6,7 @@ import (
 
 // 删除监控任务
 // https://cloud.tencent.com/document/api/692/16744
+
 type DeleteMonitorsRequest struct {
 	// 监控任务ID列表
 	MonitorIds []*int64 `name:"MonitorIds"`

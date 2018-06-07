@@ -6,6 +6,7 @@ import (
 
 // 弹性网卡解绑云主机
 // https://cloud.tencent.com/document/api/215/15816
+
 type DetachNetworkInterfaceRequest struct {
 	// CVM实例ID。形如：ins-r8hr2upy。
 	InstanceId string `name:"InstanceId"`

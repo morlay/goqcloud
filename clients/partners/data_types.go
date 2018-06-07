@@ -5,6 +5,7 @@ import (
 )
 
 // 业务信息定义
+
 type AgentBillElem struct {
 	// 支付金额，单位分
 	Amt int64 `json:"Amt"`
@@ -29,6 +30,7 @@ type AgentBillElem struct {
 }
 
 // 描述代客信息
+
 type AgentClientElem struct {
 	// 代客申请时间戳
 	ApplyTime int64 `json:"ApplyTime"`
@@ -47,6 +49,7 @@ type AgentClientElem struct {
 }
 
 // 返佣信息定义
+
 type RebateInfoElem struct {
 	// 返佣金额，单位分
 	Amt int64 `json:"Amt"`

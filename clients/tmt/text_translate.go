@@ -6,6 +6,7 @@ import (
 
 // 文本翻译
 // https://cloud.tencent.com/document/api/551/15619
+
 type TextTranslateRequest struct {
 	// 项目id
 	ProjectId int64 `name:"ProjectId"`

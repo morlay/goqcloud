@@ -6,6 +6,7 @@ import (
 
 // 调整实例配置
 // https://cloud.tencent.com/document/api/213/15744
+
 type ResetInstancesTypeRequest struct {
 	// 是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：TRUE：表示在正常关机失败后进行强制关机FALSE：表示在正常关机失败后不进行强制关机默认取值：FALSE。强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。
 	ForceStop *bool `name:"ForceStop,omitempty"`

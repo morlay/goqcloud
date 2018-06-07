@@ -6,6 +6,7 @@ import (
 
 // 查询网络计费类型
 // https://cloud.tencent.com/document/api/213/15729
+
 type DescribeInternetChargeTypeConfigsRequest struct {
 	// 区域
 	Region string `name:"Region"`

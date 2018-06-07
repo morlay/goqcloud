@@ -6,6 +6,7 @@ import (
 
 // 查询订单信息
 // https://cloud.tencent.com/document/api/237/16186
+
 type DescribeOrdersRequest struct {
 	// 待查询的长订单号列表，创建实例、续费实例、扩容实例接口返回。
 	DealNames []*string `name:"DealNames"`

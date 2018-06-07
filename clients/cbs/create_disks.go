@@ -6,6 +6,7 @@ import (
 
 // 创建云硬盘
 // https://cloud.tencent.com/document/api/362/16312
+
 type CreateDisksRequest struct {
 	// 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。
 	ClientToken *string `name:"ClientToken,omitempty"`

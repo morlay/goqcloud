@@ -6,6 +6,7 @@ import (
 
 // 终止任务实例
 // https://cloud.tencent.com/document/api/599/15908
+
 type TerminateTaskInstanceRequest struct {
 	// 作业ID
 	JobId string `name:"JobId"`

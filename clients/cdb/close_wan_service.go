@@ -6,6 +6,7 @@ import (
 
 // 关闭实例外网访问
 // https://cloud.tencent.com/document/api/236/15863
+
 type CloseWanServiceRequest struct {
 	// 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用查询实例列表 接口获取，其值为输出参数中字段 InstanceId 的值。
 	InstanceId string `name:"InstanceId"`

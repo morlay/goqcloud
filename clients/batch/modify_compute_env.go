@@ -6,6 +6,7 @@ import (
 
 // 修改计算环境
 // https://cloud.tencent.com/document/api/599/15890
+
 type ModifyComputeEnvRequest struct {
 	// 计算节点期望个数
 	DesiredComputeNodeCount int64 `name:"DesiredComputeNodeCount"`

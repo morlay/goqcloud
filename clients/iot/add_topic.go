@@ -6,6 +6,7 @@ import (
 
 // 新增Topic
 // https://cloud.tencent.com/document/api/568/16444
+
 type AddTopicRequest struct {
 	// 产品Id
 	ProductId string `name:"ProductId"`

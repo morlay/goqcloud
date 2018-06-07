@@ -6,6 +6,7 @@ import (
 
 // 创建数据导入任务
 // https://cloud.tencent.com/document/api/236/15858
+
 type CreateDbImportJobRequest struct {
 	// 导入的目标数据库名，不传表示不指定数据库。
 	DbName *string `name:"DbName,omitempty"`

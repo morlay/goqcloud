@@ -6,6 +6,7 @@ import (
 
 // 续费分布式数据库实例
 // https://cloud.tencent.com/document/api/557/16137
+
 type RenewDcdbInstanceRequest struct {
 	// 是否自动使用代金券进行支付，默认不使用。
 	AutoVoucher *bool `name:"AutoVoucher,omitempty"`

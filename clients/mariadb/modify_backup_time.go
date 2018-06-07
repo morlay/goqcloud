@@ -6,6 +6,7 @@ import (
 
 // 修改备份时间
 // https://cloud.tencent.com/document/api/237/16173
+
 type ModifyBackupTimeRequest struct {
 	// 每天备份执行的区间的结束时间，格式 mm:ss，形如 23:59
 	EndBackupTime string `name:"EndBackupTime"`

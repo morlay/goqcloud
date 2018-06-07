@@ -6,6 +6,7 @@ import (
 
 // 创建VPC
 // https://cloud.tencent.com/document/api/215/15774
+
 type CreateVpcRequest struct {
 	// vpc的cidr，只能为10.0.0.0/16，172.16.0.0/12，192.168.0.0/16这三个内网网段内。
 	CidrBlock string `name:"CidrBlock"`

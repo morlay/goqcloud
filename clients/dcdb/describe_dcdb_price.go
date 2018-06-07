@@ -6,6 +6,7 @@ import (
 
 // 新购分布式数据库实例询价
 // https://cloud.tencent.com/document/api/557/16131
+
 type DescribeDcdbPriceRequest struct {
 	// 欲购买实例的数量，目前只支持购买1个实例
 	Count int64 `name:"Count"`

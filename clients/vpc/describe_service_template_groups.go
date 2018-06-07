@@ -6,6 +6,7 @@ import (
 
 // 查询协议端口模板集合
 // https://cloud.tencent.com/document/api/215/16718
+
 type DescribeServiceTemplateGroupsRequest struct {
 	// 过滤条件。service-template-group-name - String - （过滤条件）协议端口模板集合名称。service-template-group-id - String - （过滤条件）协议端口模板集合实例ID，例如：ppmg-e6dy460g。
 	Filters []*Filter `name:"Filters,omitempty"`

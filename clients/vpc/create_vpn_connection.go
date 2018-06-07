@@ -6,6 +6,7 @@ import (
 
 // 创建VPN通道
 // https://cloud.tencent.com/document/api/215/17522
+
 type CreateVpnConnectionRequest struct {
 	// 对端网关ID，例如：cgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。
 	CustomerGatewayId string `name:"CustomerGatewayId"`

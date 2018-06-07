@@ -7,6 +7,7 @@ import (
 
 // 查看用户配置列表
 // https://cloud.tencent.com/document/api/692/16757
+
 type DescribeConfigRequest struct {
 	// 区域
 	Region string `name:"Region"`

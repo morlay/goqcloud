@@ -6,6 +6,7 @@ import (
 
 // 审核客户
 // https://cloud.tencent.com/document/api/563/16044
+
 type AuditApplyClientRequest struct {
 	// 审核结果，可能的取值：accept/reject
 	AuditResult string `name:"AuditResult"`

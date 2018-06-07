@@ -6,6 +6,7 @@ import (
 
 // 查询云硬盘配额
 // https://cloud.tencent.com/document/api/362/16318
+
 type DescribeDiskConfigQuotaRequest struct {
 	// 实例CPU核数。
 	CPU *int64 `name:"CPU,omitempty"`

@@ -6,6 +6,7 @@ import (
 
 // 查询弹性公网IP配额
 // https://cloud.tencent.com/document/api/215/16701
+
 type DescribeAddressQuotaRequest struct {
 	// 区域
 	Region string `name:"Region"`

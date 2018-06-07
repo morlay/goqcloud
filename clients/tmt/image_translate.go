@@ -6,6 +6,7 @@ import (
 
 // 图片翻译
 // https://cloud.tencent.com/document/api/551/17232
+
 type ImageTranslateRequest struct {
 	// 图片数据的Base64字符串
 	Data string `name:"Data"`

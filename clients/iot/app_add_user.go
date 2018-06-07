@@ -6,6 +6,7 @@ import (
 
 // 注册应用用户
 // https://cloud.tencent.com/document/api/568/17134
+
 type AppAddUserRequest struct {
 	// 密码
 	Password string `name:"Password"`

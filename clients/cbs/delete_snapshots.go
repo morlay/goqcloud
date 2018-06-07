@@ -6,6 +6,7 @@ import (
 
 // 删除快照
 // https://cloud.tencent.com/document/api/362/15645
+
 type DeleteSnapshotsRequest struct {
 	// 区域
 	Region string `name:"Region"`

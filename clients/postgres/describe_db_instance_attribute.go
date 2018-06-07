@@ -6,6 +6,7 @@ import (
 
 // 查询实例详情
 // https://cloud.tencent.com/document/api/409/16772
+
 type DescribeDbInstanceAttributeRequest struct {
 	// 实例ID。
 	DBInstanceId string `name:"DBInstanceId"`

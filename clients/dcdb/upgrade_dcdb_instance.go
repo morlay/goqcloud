@@ -6,6 +6,7 @@ import (
 
 // 升级分布式数据库
 // https://cloud.tencent.com/document/api/557/16136
+
 type UpgradeDcdbInstanceRequest struct {
 	// 新增分片配置，当UpgradeType为ADD时生效。
 	AddShardConfig *AddShardConfig `name:"AddShardConfig,omitempty"`

@@ -6,6 +6,7 @@ import (
 
 // 查询VPC列表
 // https://cloud.tencent.com/document/api/215/15778
+
 type DescribeVpcsRequest struct {
 	// 过滤条件，参数不支持同时指定VpcIds和Filters。vpc-name - String - （过滤条件）VPC实例名称。is-default - Boolean - （过滤条件）是否默认VPC。vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。cidr-block - String - （过滤条件）vpc的cidr。
 	Filters []*Filter `name:"Filters,omitempty"`

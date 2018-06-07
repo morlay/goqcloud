@@ -6,6 +6,7 @@ import (
 
 // 修改安全组出站和入站规则
 // https://cloud.tencent.com/document/api/215/15810
+
 type ModifySecurityGroupPoliciesRequest struct {
 	// 区域
 	Region string `name:"Region"`

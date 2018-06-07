@@ -6,6 +6,7 @@ import (
 
 // 创建云数据库实例（按量计费）
 // https://cloud.tencent.com/document/api/236/15865
+
 type CreateDbInstanceHourRequest struct {
 	// 自动续费标记，值为0或1
 	AutoRenewFlag *int64 `name:"AutoRenewFlag,omitempty"`

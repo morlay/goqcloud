@@ -6,6 +6,7 @@ import (
 
 // 替换路由表绑定关系
 // https://cloud.tencent.com/document/api/215/15767
+
 type ReplaceRouteTableAssociationRequest struct {
 	// 区域
 	Region string `name:"Region"`

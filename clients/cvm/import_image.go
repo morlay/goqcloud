@@ -6,6 +6,7 @@ import (
 
 // 外部镜像导入
 // https://cloud.tencent.com/document/api/213/15717
+
 type ImportImageRequest struct {
 	// 导入镜像的操作系统架构，x86_64 或 i386
 	Architecture string `name:"Architecture"`

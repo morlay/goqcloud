@@ -6,6 +6,7 @@ import (
 
 // 创建基础网络互通
 // https://cloud.tencent.com/document/api/215/15779
+
 type AttachClassicLinkVpcRequest struct {
 	// CVM实例ID
 	InstanceIds []*string `name:"InstanceIds"`

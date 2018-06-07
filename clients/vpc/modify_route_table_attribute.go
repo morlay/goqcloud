@@ -6,6 +6,7 @@ import (
 
 // 修改路由表属性
 // https://cloud.tencent.com/document/api/215/15766
+
 type ModifyRouteTableAttributeRequest struct {
 	// 区域
 	Region string `name:"Region"`

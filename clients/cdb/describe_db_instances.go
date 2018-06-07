@@ -6,6 +6,7 @@ import (
 
 // 查询实例列表
 // https://cloud.tencent.com/document/api/236/15872
+
 type DescribeDbInstancesRequest struct {
 	// 是否锁定标记
 	CdbErrors []*int64 `name:"CdbErrors,omitempty"`

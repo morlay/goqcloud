@@ -6,6 +6,7 @@ import (
 
 // 创建DB实例
 // https://cloud.tencent.com/document/api/409/16771
+
 type CreateDbInstancesRequest struct {
 	// 是否自动使用代金券。1（是），0（否），默认不使用。
 	AutoVoucher *int64 `name:"AutoVoucher,omitempty"`

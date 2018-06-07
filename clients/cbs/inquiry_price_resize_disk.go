@@ -6,6 +6,7 @@ import (
 
 // 扩容云硬盘询价
 // https://cloud.tencent.com/document/api/362/16320
+
 type InquiryPriceResizeDiskRequest struct {
 	// 云硬盘ID， 通过DescribeDisks接口查询。
 	DiskId string `name:"DiskId"`

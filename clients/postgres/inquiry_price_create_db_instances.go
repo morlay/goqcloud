@@ -6,6 +6,7 @@ import (
 
 // 查询售卖价格
 // https://cloud.tencent.com/document/api/409/16777
+
 type InquiryPriceCreateDbInstancesRequest struct {
 	// 实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。
 	InstanceChargeType *string `name:"InstanceChargeType,omitempty"`

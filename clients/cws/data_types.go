@@ -4,76 +4,8 @@ import (
 	time "time"
 )
 
-// 漏洞数据
-type Vul struct {
-	// CreatedAt。
-	CreatedAt *time.Time `json:"CreatedAt,omitempty"`
-	// 漏洞描述。
-	Describe *string `json:"Describe,omitempty"`
-	// 漏洞参考。
-	From *string `json:"From,omitempty"`
-	// 危害说明。
-	Harm *string `json:"Harm,omitempty"`
-	// 网址/细节。
-	Html *string `json:"Html,omitempty"`
-	// 漏洞ID。
-	Id *int64 `json:"Id,omitempty"`
-	// 是否已经添加误报，0-否，1-是。
-	IsReported int64 `json:"IsReported"`
-	// 漏洞级别：high、middle、low、notice。
-	Level *string `json:"Level,omitempty"`
-	// 漏洞名称。
-	Name *string `json:"Name,omitempty"`
-	// 漏洞类型。
-	Nickname *string `json:"Nickname,omitempty"`
-	// 漏洞通过该参数攻击。
-	Parameter *string `json:"Parameter,omitempty"`
-	// 站点ID。
-	SiteId *int64 `json:"SiteId,omitempty"`
-	// 解决方案。
-	Solution *string `json:"Solution,omitempty"`
-	// 扫描引擎的扫描任务ID。
-	TaskId *int64 `json:"TaskId,omitempty"`
-	// UpdatedAt。
-	UpdatedAt *time.Time `json:"UpdatedAt,omitempty"`
-	// 出现漏洞的url。
-	Url *string `json:"Url,omitempty"`
-}
-
-// 描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等
-type Filter *Filter // 监控任务基础数据
-type Monitor struct {
-	// 云用户appid。
-	Appid int64 `json:"Appid"`
-	// CreatedAt。
-	CreatedAt *time.Time `json:"CreatedAt,omitempty"`
-	// 扫描周期，单位小时，每X小时执行一次。
-	Crontab *int64 `json:"Crontab,omitempty"`
-	// 当前扫描开始时间，如扫描完成则为上一次扫描的开始时间。
-	CurrentScanStartTime *time.Time `json:"CurrentScanStartTime,omitempty"`
-	// 首次扫描开始时间。
-	FirstScanStartTime *time.Time `json:"FirstScanStartTime,omitempty"`
-	// 监控任务ID。
-	Id *int64 `json:"Id,omitempty"`
-	// 指定扫描类型，3位数每位依次表示：扫描Web漏洞、扫描系统漏洞、扫描系统端口。
-	IncludedVulsTypes *string `json:"IncludedVulsTypes,omitempty"`
-	// 上一次扫描完成时间。
-	LastScanFinishTime *time.Time `json:"LastScanFinishTime,omitempty"`
-	// 监测状态：1-监测中；2-暂停监测。
-	MonitorStatus *int64 `json:"MonitorStatus,omitempty"`
-	// 监控名称。
-	Name *string `json:"Name,omitempty"`
-	// 速率限制，每秒发送X个HTTP请求。
-	RateLimit *int64 `json:"RateLimit,omitempty"`
-	// 扫描状态：0-待扫描（无任何扫描结果）；1-扫描中（正在进行扫描）；2-已扫描（有扫描结果且不正在扫描）；3-扫描完成待同步结果。
-	ScanStatus *int64 `json:"ScanStatus,omitempty"`
-	// 监测模式，normal-正常扫描；deep-深度扫描。
-	ScannerType *string `json:"ScannerType,omitempty"`
-	// UpdatedAt。
-	UpdatedAt *time.Time `json:"UpdatedAt,omitempty"`
-}
-
 // 监控任务中的站点信息。
+
 type MonitorMiniSite struct {
 	// 站点ID。
 	SiteId *int64 `json:"SiteId,omitempty"`
@@ -82,6 +14,7 @@ type MonitorMiniSite struct {
 }
 
 // 监控任务详细数据
+
 type MonitorsDetail struct {
 	// 监控任务基础信息。
 	Basic *Monitor `json:"Basic,omitempty"`
@@ -108,6 +41,7 @@ type MonitorsDetail struct {
 }
 
 // 站点数据
+
 type Site struct {
 	// 云用户appid。
 	Appid int64 `json:"Appid"`
@@ -164,6 +98,7 @@ type Site struct {
 }
 
 // 站点验证数据
+
 type SitesVerification struct {
 	// 云用户appid
 	Appid int64 `json:"Appid"`
@@ -183,4 +118,78 @@ type SitesVerification struct {
 	ValidTo *time.Time `json:"ValidTo,omitempty"`
 	// 验证状态：0-未验证；1-已验证；2-验证失效，待重新验证。
 	VerifyStatus *int64 `json:"VerifyStatus,omitempty"`
+}
+
+// 漏洞数据
+
+type Vul struct {
+	// CreatedAt。
+	CreatedAt *time.Time `json:"CreatedAt,omitempty"`
+	// 漏洞描述。
+	Describe *string `json:"Describe,omitempty"`
+	// 漏洞参考。
+	From *string `json:"From,omitempty"`
+	// 危害说明。
+	Harm *string `json:"Harm,omitempty"`
+	// 网址/细节。
+	Html *string `json:"Html,omitempty"`
+	// 漏洞ID。
+	Id *int64 `json:"Id,omitempty"`
+	// 是否已经添加误报，0-否，1-是。
+	IsReported int64 `json:"IsReported"`
+	// 漏洞级别：high、middle、low、notice。
+	Level *string `json:"Level,omitempty"`
+	// 漏洞名称。
+	Name *string `json:"Name,omitempty"`
+	// 漏洞类型。
+	Nickname *string `json:"Nickname,omitempty"`
+	// 漏洞通过该参数攻击。
+	Parameter *string `json:"Parameter,omitempty"`
+	// 站点ID。
+	SiteId *int64 `json:"SiteId,omitempty"`
+	// 解决方案。
+	Solution *string `json:"Solution,omitempty"`
+	// 扫描引擎的扫描任务ID。
+	TaskId *int64 `json:"TaskId,omitempty"`
+	// UpdatedAt。
+	UpdatedAt *time.Time `json:"UpdatedAt,omitempty"`
+	// 出现漏洞的url。
+	Url *string `json:"Url,omitempty"`
+}
+
+// 描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等
+
+type Filter *Filter
+
+// 监控任务基础数据
+
+type Monitor struct {
+	// 云用户appid。
+	Appid int64 `json:"Appid"`
+	// CreatedAt。
+	CreatedAt *time.Time `json:"CreatedAt,omitempty"`
+	// 扫描周期，单位小时，每X小时执行一次。
+	Crontab *int64 `json:"Crontab,omitempty"`
+	// 当前扫描开始时间，如扫描完成则为上一次扫描的开始时间。
+	CurrentScanStartTime *time.Time `json:"CurrentScanStartTime,omitempty"`
+	// 首次扫描开始时间。
+	FirstScanStartTime *time.Time `json:"FirstScanStartTime,omitempty"`
+	// 监控任务ID。
+	Id *int64 `json:"Id,omitempty"`
+	// 指定扫描类型，3位数每位依次表示：扫描Web漏洞、扫描系统漏洞、扫描系统端口。
+	IncludedVulsTypes *string `json:"IncludedVulsTypes,omitempty"`
+	// 上一次扫描完成时间。
+	LastScanFinishTime *time.Time `json:"LastScanFinishTime,omitempty"`
+	// 监测状态：1-监测中；2-暂停监测。
+	MonitorStatus *int64 `json:"MonitorStatus,omitempty"`
+	// 监控名称。
+	Name *string `json:"Name,omitempty"`
+	// 速率限制，每秒发送X个HTTP请求。
+	RateLimit *int64 `json:"RateLimit,omitempty"`
+	// 扫描状态：0-待扫描（无任何扫描结果）；1-扫描中（正在进行扫描）；2-已扫描（有扫描结果且不正在扫描）；3-扫描完成待同步结果。
+	ScanStatus *int64 `json:"ScanStatus,omitempty"`
+	// 监测模式，normal-正常扫描；deep-深度扫描。
+	ScannerType *string `json:"ScannerType,omitempty"`
+	// UpdatedAt。
+	UpdatedAt *time.Time `json:"UpdatedAt,omitempty"`
 }

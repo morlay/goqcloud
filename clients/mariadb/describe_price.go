@@ -6,6 +6,7 @@ import (
 
 // 新购实例询价
 // https://cloud.tencent.com/document/api/237/16175
+
 type DescribePriceRequest struct {
 	// 欲购买的数量，默认查询购买1个实例的价格。
 	Count *int64 `name:"Count,omitempty"`

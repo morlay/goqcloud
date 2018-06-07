@@ -6,6 +6,7 @@ import (
 
 // 查询流程状态
 // https://cloud.tencent.com/document/api/237/16177
+
 type DescribeFlowRequest struct {
 	// 异步请求接口返回的任务流程号。
 	FlowId int64 `name:"FlowId"`

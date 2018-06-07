@@ -6,6 +6,7 @@ import (
 
 // 删除云数据库的账号
 // https://cloud.tencent.com/document/api/236/17501
+
 type DeleteAccountsRequest struct {
 	// 云数据库账号。
 	Accounts []*Account `name:"Accounts"`

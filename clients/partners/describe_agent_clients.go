@@ -6,6 +6,7 @@ import (
 
 // 查询待审核客户列表
 // https://cloud.tencent.com/document/api/563/16046
+
 type DescribeAgentClientsRequest struct {
 	// 客户类型，a/b，类型定义参考代理商相关政策文档
 	ClientFlag *string `name:"ClientFlag,omitempty"`

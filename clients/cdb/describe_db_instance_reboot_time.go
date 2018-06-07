@@ -6,6 +6,7 @@ import (
 
 // 查询云数据库实例的预期重启时间
 // https://cloud.tencent.com/document/api/236/15874
+
 type DescribeDbInstanceRebootTimeRequest struct {
 	// 实例的ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
 	InstanceIds []*string `name:"InstanceIds"`

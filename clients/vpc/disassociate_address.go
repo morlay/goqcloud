@@ -6,6 +6,7 @@ import (
 
 // 解绑定弹性公网IP
 // https://cloud.tencent.com/document/api/215/16703
+
 type DisassociateAddressRequest struct {
 	// 标识 EIP 的唯一 ID。EIP 唯一 ID 形如：eip-11112222。
 	AddressId string `name:"AddressId"`

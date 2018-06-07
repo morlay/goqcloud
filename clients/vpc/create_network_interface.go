@@ -6,6 +6,7 @@ import (
 
 // 创建弹性网卡
 // https://cloud.tencent.com/document/api/215/15818
+
 type CreateNetworkInterfaceRequest struct {
 	// 弹性网卡描述，可任意命名，但不得超过60个字符。
 	NetworkInterfaceDescription *string `name:"NetworkInterfaceDescription,omitempty"`

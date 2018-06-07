@@ -6,6 +6,7 @@ import (
 
 // 创建弹性公网IP
 // https://cloud.tencent.com/document/api/215/16699
+
 type AllocateAddressesRequest struct {
 	// 申请 EIP 数量，默认值为1。
 	AddressCount *int64 `name:"AddressCount,omitempty"`

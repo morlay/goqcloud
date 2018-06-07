@@ -6,6 +6,7 @@ import (
 
 // 升级云数据库实例
 // https://cloud.tencent.com/document/api/236/15876
+
 type UpgradeDbInstanceRequest struct {
 	// 备库2的可用区ID，默认为0，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义
 	BackupZone *string `name:"BackupZone,omitempty"`

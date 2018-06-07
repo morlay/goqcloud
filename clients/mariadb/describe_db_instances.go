@@ -6,6 +6,7 @@ import (
 
 // 查询实例列表
 // https://cloud.tencent.com/document/api/237/16184
+
 type DescribeDbInstancesRequest struct {
 	// 按照一个或者多个实例 ID 查询。实例 ID 形如：tdsql-ow728lmc。每次请求的实例的上限为100。
 	InstanceIds []*string `name:"InstanceIds,omitempty"`

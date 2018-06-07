@@ -6,6 +6,7 @@ import (
 
 // 修改客户备注
 // https://cloud.tencent.com/document/api/563/16045
+
 type ModifyClientRemarkRequest struct {
 	// 客户备注名称
 	ClientRemark string `name:"ClientRemark"`

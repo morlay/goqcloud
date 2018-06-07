@@ -6,6 +6,7 @@ import (
 
 // 查看作业列表
 // https://cloud.tencent.com/document/api/599/15909
+
 type DescribeJobsRequest struct {
 	// 过滤条件
 	Filters []*Filter `name:"Filters,omitempty"`

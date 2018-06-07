@@ -6,6 +6,7 @@ import (
 
 // 修改云数据库实例账号的权限
 // https://cloud.tencent.com/document/api/236/17496
+
 type ModifyAccountPrivilegesRequest struct {
 	// 数据库的账号，包括用户名和域名。
 	Accounts []*Account `name:"Accounts"`

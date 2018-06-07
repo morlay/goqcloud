@@ -6,6 +6,7 @@ import (
 
 // 删除任务模板
 // https://cloud.tencent.com/document/api/599/15900
+
 type DeleteTaskTemplatesRequest struct {
 	// 区域
 	Region string `name:"Region"`

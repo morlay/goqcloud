@@ -6,6 +6,7 @@ import (
 
 // 修改IP地址模板集合
 // https://cloud.tencent.com/document/api/215/16721
+
 type ModifyAddressTemplateGroupAttributeRequest struct {
 	// IP地址模板集合实例ID，例如：ipmg-2uw6ujo6。
 	AddressTemplateGroupId string `name:"AddressTemplateGroupId"`

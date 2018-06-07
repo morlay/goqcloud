@@ -6,6 +6,7 @@ import (
 
 // 修改镜像分享信息
 // https://cloud.tencent.com/document/api/213/15710
+
 type ModifyImageSharePermissionRequest struct {
 	// 接收分享镜像的账号Id列表，array型参数的格式可以参考API简介。帐号ID不同于QQ号，查询用户帐号ID请查看帐号信息中的帐号ID栏。
 	AccountIds []*string `name:"AccountIds"`

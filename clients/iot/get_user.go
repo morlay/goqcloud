@@ -6,6 +6,7 @@ import (
 
 // 获取用户信息
 // https://cloud.tencent.com/document/api/568/16589
+
 type GetUserRequest struct {
 	// 区域
 	Region string `name:"Region"`

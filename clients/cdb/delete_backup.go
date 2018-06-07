@@ -6,6 +6,7 @@ import (
 
 // 删除云数据库备份
 // https://cloud.tencent.com/document/api/236/15841
+
 type DeleteBackupRequest struct {
 	// 备份任务Id。
 	BackupId int64 `name:"BackupId"`

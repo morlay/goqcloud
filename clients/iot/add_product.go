@@ -6,6 +6,7 @@ import (
 
 // 新增产品
 // https://cloud.tencent.com/document/api/568/16448
+
 type AddProductRequest struct {
 	// 鉴权模式（1：动态令牌，推荐使用动态令牌）
 	AuthType *int64 `name:"AuthType,omitempty"`

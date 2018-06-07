@@ -6,6 +6,7 @@ import (
 
 // 创建密钥对
 // https://cloud.tencent.com/document/api/213/15702
+
 type CreateKeyPairRequest struct {
 	// 密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
 	KeyName string `name:"KeyName"`

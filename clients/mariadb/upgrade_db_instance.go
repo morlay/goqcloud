@@ -6,6 +6,7 @@ import (
 
 // 扩容实例
 // https://cloud.tencent.com/document/api/237/16189
+
 type UpgradeDbInstanceRequest struct {
 	// 是否自动使用代金券进行支付，默认不使用。
 	AutoVoucher *bool `name:"AutoVoucher,omitempty"`

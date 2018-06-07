@@ -6,6 +6,7 @@ import (
 
 // 查看计算环境创建信息列表
 // https://cloud.tencent.com/document/api/599/15894
+
 type DescribeComputeEnvCreateInfosRequest struct {
 	// 计算环境ID
 	EnvIds []*string `name:"EnvIds,omitempty"`

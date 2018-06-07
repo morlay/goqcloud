@@ -6,6 +6,7 @@ import (
 
 // 修改CDH实例的属性
 // https://cloud.tencent.com/document/api/213/16475
+
 type ModifyHostsAttributeRequest struct {
 	// 一个或多个待操作的CDH实例ID。
 	HostIds []*string `name:"HostIds"`

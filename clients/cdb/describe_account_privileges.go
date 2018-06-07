@@ -6,6 +6,7 @@ import (
 
 // 查询云数据库账户的权限信息
 // https://cloud.tencent.com/document/api/236/17500
+
 type DescribeAccountPrivilegesRequest struct {
 	// 数据库的账号域名。
 	Host string `name:"Host"`

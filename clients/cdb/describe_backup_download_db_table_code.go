@@ -6,6 +6,7 @@ import (
 
 // 查询分库分表下载位点
 // https://cloud.tencent.com/document/api/236/15838
+
 type DescribeBackupDownloadDbTableCodeRequest struct {
 	// 待下载的数据库和数据表列表。
 	DatabaseTableList []*DatabaseTableList `name:"DatabaseTableList"`

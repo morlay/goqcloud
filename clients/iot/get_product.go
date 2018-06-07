@@ -6,6 +6,7 @@ import (
 
 // 获取产品信息
 // https://cloud.tencent.com/document/api/568/16380
+
 type GetProductRequest struct {
 	// 产品Id
 	ProductId string `name:"ProductId"`

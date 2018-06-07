@@ -7,6 +7,7 @@ import (
 
 // 获取数据历史
 // https://cloud.tencent.com/document/api/568/16521
+
 type GetDataHistoryRequest struct {
 	// 设备名称列表，允许最多一次100台
 	DeviceNames []*string `name:"DeviceNames"`

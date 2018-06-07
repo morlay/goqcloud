@@ -6,6 +6,7 @@ import (
 
 // 查询分布式数据库可售卖分片规格
 // https://cloud.tencent.com/document/api/557/16134
+
 type DescribeShardSpecRequest struct {
 	// 区域
 	Region string `name:"Region"`

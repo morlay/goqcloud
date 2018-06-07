@@ -6,6 +6,7 @@ import (
 
 // 创建云硬盘询价
 // https://cloud.tencent.com/document/api/362/16314
+
 type InquiryPriceCreateDisksRequest struct {
 	// 预付费相关参数设置，通过该参数可以指定包年包月云盘的购买时长，预付费云盘该参数必传。
 	DiskChargePrepaid *DiskChargePrepaid `name:"DiskChargePrepaid,omitempty"`

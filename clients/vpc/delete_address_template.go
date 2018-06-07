@@ -6,6 +6,7 @@ import (
 
 // 删除IP地址模板
 // https://cloud.tencent.com/document/api/215/16712
+
 type DeleteAddressTemplateRequest struct {
 	// IP地址模板实例ID，例如：ipm-09o5m8kc。
 	AddressTemplateId string `name:"AddressTemplateId"`

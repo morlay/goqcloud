@@ -6,6 +6,7 @@ import (
 
 // 修改密钥对属性
 // https://cloud.tencent.com/document/api/213/15701
+
 type ModifyKeyPairAttributeRequest struct {
 	// 修改后的密钥对描述信息。可任意命名，但不得超过60个字符。
 	Description *string `name:"Description,omitempty"`

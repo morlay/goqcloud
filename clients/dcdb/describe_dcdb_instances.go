@@ -6,6 +6,7 @@ import (
 
 // 查询实例列表
 // https://cloud.tencent.com/document/api/557/16140
+
 type DescribeDcdbInstancesRequest struct {
 	// 按照一个或者多个实例 ID 查询。实例 ID 形如：dcdbt-2t4cf98d
 	InstanceIds []*string `name:"InstanceIds,omitempty"`

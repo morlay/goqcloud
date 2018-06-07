@@ -6,6 +6,7 @@ import (
 
 // 修改云数据库实例账号的备注信息
 // https://cloud.tencent.com/document/api/236/17498
+
 type ModifyAccountDescriptionRequest struct {
 	// 云数据库账号。
 	Accounts []*Account `name:"Accounts"`

@@ -6,6 +6,7 @@ import (
 
 // 续费实例询价
 // https://cloud.tencent.com/document/api/213/15725
+
 type InquiryPriceRenewInstancesRequest struct {
 	// 试运行。
 	DryRun *bool `name:"DryRun,omitempty"`

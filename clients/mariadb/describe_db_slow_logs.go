@@ -7,6 +7,7 @@ import (
 
 // 查询慢查询日志列表
 // https://cloud.tencent.com/document/api/237/16159
+
 type DescribeDbSlowLogsRequest struct {
 	// 要查询的具体数据库名称
 	Db *string `name:"Db,omitempty"`

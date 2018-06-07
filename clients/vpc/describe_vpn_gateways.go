@@ -6,6 +6,7 @@ import (
 
 // 查询VPN网关
 // https://cloud.tencent.com/document/api/215/17514
+
 type DescribeVpnGatewaysRequest struct {
 	// 过滤器对象属性
 	Filters []*FilterObject `name:"Filters,omitempty"`

@@ -6,6 +6,7 @@ import (
 
 // 删除计算环境
 // https://cloud.tencent.com/document/api/599/15889
+
 type DeleteComputeEnvRequest struct {
 	// 计算环境ID
 	EnvId string `name:"EnvId"`

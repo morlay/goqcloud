@@ -6,6 +6,7 @@ import (
 
 // 扩容实例磁盘
 // https://cloud.tencent.com/document/api/213/15731
+
 type ResizeInstanceDisksRequest struct {
 	// 待扩容的数据盘配置信息。只支持扩容随实例购买的数据盘，且数据盘类型为：CLOUD_BASIC、CLOUD_PREMIUM、CLOUD_SSD。数据盘容量单位：GB。最小扩容步长：10G。关于数据盘类型的选择请参考硬盘产品简介。可选数据盘类型受到实例类型InstanceType限制。另外允许扩容的最大容量也因数据盘类型的不同而有所差异。
 	DataDisks []*DataDisk `name:"DataDisks"`

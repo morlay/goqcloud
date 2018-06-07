@@ -6,6 +6,7 @@ import (
 
 // 查询对端网关
 // https://cloud.tencent.com/document/api/215/17516
+
 type DescribeCustomerGatewaysRequest struct {
 	// 对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。
 	CustomerGatewayIds []*string `name:"CustomerGatewayIds,omitempty"`

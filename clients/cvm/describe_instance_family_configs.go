@@ -6,6 +6,7 @@ import (
 
 // 查询所支持的实例机型族信息
 // https://cloud.tencent.com/document/api/213/15748
+
 type DescribeInstanceFamilyConfigsRequest struct {
 	// 区域
 	Region string `name:"Region"`

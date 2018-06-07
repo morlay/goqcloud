@@ -6,6 +6,7 @@ import (
 
 // 升级实例版本
 // https://cloud.tencent.com/document/api/236/15870
+
 type UpgradeDbInstanceEngineVersionRequest struct {
 	// 主实例数据库引擎版本，支持值包括：5.6和5.7
 	EngineVersion string `name:"EngineVersion"`

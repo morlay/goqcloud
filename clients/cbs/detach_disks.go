@@ -6,6 +6,7 @@ import (
 
 // 解挂云硬盘
 // https://cloud.tencent.com/document/api/362/16316
+
 type DetachDisksRequest struct {
 	// 将要解挂的云硬盘ID， 通过DescribeDisks接口查询，单次请求最多可解挂10块弹性云盘。
 	DiskIds []*string `name:"DiskIds"`

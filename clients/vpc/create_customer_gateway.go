@@ -6,6 +6,7 @@ import (
 
 // 创建对端网关
 // https://cloud.tencent.com/document/api/215/17523
+
 type CreateCustomerGatewayRequest struct {
 	// 对端网关名称，可任意命名，但不得超过60个字符。
 	CustomerGatewayName string `name:"CustomerGatewayName"`

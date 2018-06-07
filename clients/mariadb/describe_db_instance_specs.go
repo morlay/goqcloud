@@ -6,6 +6,7 @@ import (
 
 // 查询云数据库可售卖规格
 // https://cloud.tencent.com/document/api/237/16188
+
 type DescribeDbInstanceSpecsRequest struct {
 	// 区域
 	Region string `name:"Region"`

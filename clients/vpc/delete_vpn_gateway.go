@@ -6,6 +6,7 @@ import (
 
 // 删除VPN网关
 // https://cloud.tencent.com/document/api/215/17518
+
 type DeleteVpnGatewayRequest struct {
 	// 区域
 	Region string `name:"Region"`

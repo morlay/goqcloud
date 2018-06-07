@@ -6,6 +6,7 @@ import (
 
 // 释放弹性公网IP
 // https://cloud.tencent.com/document/api/215/16705
+
 type ReleaseAddressesRequest struct {
 	// 标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：eip-11112222。
 	AddressIds []*string `name:"AddressIds,omitempty"`

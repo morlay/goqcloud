@@ -6,6 +6,7 @@ import (
 
 // 修改数据库备份配置
 // https://cloud.tencent.com/document/api/236/15839
+
 type ModifyBackupConfigRequest struct {
 	// 目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备；默认备份方法为 逻辑冷备。
 	BackupMethod *string `name:"BackupMethod,omitempty"`

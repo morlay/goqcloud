@@ -6,6 +6,7 @@ import (
 
 // 新增规则
 // https://cloud.tencent.com/document/api/568/16458
+
 type AddRuleRequest struct {
 	// 转发
 	Actions []*Object `name:"Actions,omitempty"`

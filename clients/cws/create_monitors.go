@@ -7,6 +7,7 @@ import (
 
 // 新增监测任务
 // https://cloud.tencent.com/document/api/692/16743
+
 type CreateMonitorsRequest struct {
 	// 扫描周期，单位小时，每X小时执行一次
 	Crontab int64 `name:"Crontab"`

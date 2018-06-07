@@ -6,6 +6,7 @@ import (
 
 // 续费实例询价
 // https://cloud.tencent.com/document/api/557/16138
+
 type DescribeDcdbRenewalPriceRequest struct {
 	// 待续费的实例ID。形如：dcdbt-ow728lmc，可以通过 DescribeDCDBInstances 查询实例详情获得。
 	InstanceId string `name:"InstanceId"`

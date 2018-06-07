@@ -6,6 +6,7 @@ import (
 
 // 查看数据库参数
 // https://cloud.tencent.com/document/api/237/16154
+
 type DescribeDbParametersRequest struct {
 	// 实例 ID，形如：tdsql-ow728lmc。
 	InstanceId string `name:"InstanceId"`

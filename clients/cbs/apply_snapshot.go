@@ -6,6 +6,7 @@ import (
 
 // 回滚快照
 // https://cloud.tencent.com/document/api/362/15643
+
 type ApplySnapshotRequest struct {
 	// 快照原云硬盘ID，可通过DescribeDisks接口查询。
 	DiskId string `name:"DiskId"`

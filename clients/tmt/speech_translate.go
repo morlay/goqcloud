@@ -6,6 +6,7 @@ import (
 
 // 语音翻译
 // https://cloud.tencent.com/document/api/551/16611
+
 type SpeechTranslateRequest struct {
 	// pcm : 146   amr : 33554432   mp3 : 83886080
 	AudioFormat int64 `name:"AudioFormat"`
