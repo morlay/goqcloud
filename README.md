@@ -1,5 +1,8 @@
 ## Tencent Cloud SDK for go
 
+[![GoDoc Widget](https://godoc.org/github.com/morlay/goqcloud?status.svg)](https://godoc.org/github.com/morlay/goqcloud)
+[![Go Report Card](https://goreportcard.com/badge/github.com/morlay/goqcloud)](https://goreportcard.com/report/github.com/morlay/goqcloud)
+
 Generated form [Tencent Cloud API docs](https://cloud.tencent.com/document/api)
 
 

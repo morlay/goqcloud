@@ -1,8 +1,9 @@
 package mariadb
 
 import (
-	github_com_morlay_goqcloud "github.com/morlay/goqcloud"
 	time "time"
+
+	github_com_morlay_goqcloud "github.com/morlay/goqcloud"
 )
 
 // 查看实例性能数据详情

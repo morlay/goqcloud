@@ -7,10 +7,9 @@ import (
 	"sync"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/sirupsen/logrus"
-
-	"github.com/go-courier/codegen"
 	"github.com/davecgh/go-spew/spew"
+	"github.com/go-courier/codegen"
+	"github.com/sirupsen/logrus"
 )
 
 type APIDocEntries struct {

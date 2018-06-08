@@ -10,9 +10,10 @@ import (
 	"reflect"
 	"time"
 
+	"github.com/sirupsen/logrus"
+
 	"github.com/morlay/goqcloud/signature"
 	"github.com/morlay/goqcloud/transform"
-	"github.com/sirupsen/logrus"
 )
 
 type Client interface {

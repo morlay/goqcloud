@@ -1,8 +1,9 @@
 package iot
 
 import (
-	github_com_morlay_goqcloud "github.com/morlay/goqcloud"
 	time "time"
+
+	github_com_morlay_goqcloud "github.com/morlay/goqcloud"
 )
 
 // 获取数据历史
