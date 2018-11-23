@@ -10,7 +10,7 @@ import (
 type UnassignPrivateIPAddressesRequest struct {
 	// 弹性网卡实例ID，例如：eni-m6dyj72l。
 	NetworkInterfaceId string `name:"NetworkInterfaceId"`
-	// 指定的内网IP信息。
+	// 指定的内网IP信息，单次最多指定10个。
 	PrivateIpAddresses []*PrivateIpAddressSpecification `name:"PrivateIpAddresses"`
 	// 区域
 	Region string `name:"Region"`

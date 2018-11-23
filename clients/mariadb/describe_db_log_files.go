@@ -29,11 +29,11 @@ type DescribeDbLogFilesResponse struct {
 	// 实例 ID，形如：tdsql-ow728lmc。
 	InstanceId string `json:"InstanceId"`
 	// 如果是普通网络的实例，做用本前缀加上URI为下载地址
-	Normalprefix string `json:"Normalprefix"`
+	NormalPrefix string `json:"NormalPrefix"`
 	// 请求日志总数
 	Total int64 `json:"Total"`
 	// 请求日志类型，取值只能为1、2、3或者4。1-binlog，2-冷备，3-errlog，4-slowlog。
 	Type int64 `json:"Type"`
 	// 如果是VPC网络的实例，做用本前缀加上URI为下载地址
-	Vpcprefix string `json:"Vpcprefix"`
+	VpcPrefix string `json:"VpcPrefix"`
 }

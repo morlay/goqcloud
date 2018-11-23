@@ -12,7 +12,7 @@ type LanguageDetectRequest struct {
 	ProjectId int64 `name:"ProjectId"`
 	// 区域
 	Region string `name:"Region"`
-	// 待识别的文本
+	// 待识别的文本，文本统一使用utf-8格式编码，非utf-8格式编码字符会翻译失败
 	Text string `name:"Text"`
 }
 

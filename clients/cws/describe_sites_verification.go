@@ -23,7 +23,7 @@ func (req *DescribeSitesVerificationRequest) Invoke(client github_com_morlay_goq
 type DescribeSitesVerificationResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
 	// 验证信息列表。
-	SitesVerification SitesVerification `json:"SitesVerification"`
+	SitesVerification []*SitesVerification `json:"SitesVerification"`
 	// 验证信息数量。
 	TotalCount int64 `json:"TotalCount"`
 }

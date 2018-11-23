@@ -10,10 +10,10 @@ import (
 type DescribeDbInstancesRequest struct {
 	// 过滤条件，目前支持：db-instance-id、db-instance-name两种。
 	Filters []*Filter `name:"Filters,omitempty"`
-	// 分页序号，从1开始。
-	PageNumber *int64 `name:"PageNumber,omitempty"`
 	// 每页显示数量，默认返回10条。
-	PageSize *int64 `name:"PageSize,omitempty"`
+	Limit *int64 `name:"Limit,omitempty"`
+	// 分页序号，从0开始。
+	Offset *int64 `name:"Offset,omitempty"`
 	// 区域
 	Region string `name:"Region"`
 }

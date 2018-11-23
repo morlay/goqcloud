@@ -32,7 +32,7 @@ func (req *ImageTranslateRequest) Invoke(client github_com_morlay_goqcloud.Clien
 
 type ImageTranslateResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
-	// 图片翻译结果
+	// 图片翻译结果，翻译结果按识别的文本每一行独立翻译，后续会推出按段落划分并翻译的版本
 	ImageRecord ImageRecord `json:"ImageRecord"`
 	// 请求的SessionUuid返回
 	SessionUuid string `json:"SessionUuid"`

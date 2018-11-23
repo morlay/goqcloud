@@ -44,7 +44,7 @@ type CreateDbInstanceRequest struct {
 	Region string `name:"Region"`
 	// 只读实例参数
 	RoGroup *RoGroup `name:"RoGroup,omitempty"`
-	// 安全组参数
+	// 安全组参数，可使用查询项目安全组信息接口查询某个项目的安全组详情
 	SecurityGroup []*string `name:"SecurityGroup,omitempty"`
 	// 备库1的可用区信息，默认为zone的值
 	SlaveZone *string `name:"SlaveZone,omitempty"`
@@ -66,8 +66,8 @@ func (req *CreateDbInstanceRequest) Invoke(client github_com_morlay_goqcloud.Cli
 
 type CreateDbInstanceResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
-	// 短订单ID，用于调用云API相关接口，如获取订单信息
-	DealIds string `json:"DealIds"`
+	// 短订单ID
+	DealIds []*string `json:"DealIds"`
 	// 实例ID列表
 	InstanceIds []*string `json:"InstanceIds"`
 }

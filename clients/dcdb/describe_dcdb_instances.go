@@ -8,10 +8,14 @@ import (
 // https://cloud.tencent.com/document/api/557/16140
 
 type DescribeDcdbInstancesRequest struct {
+	// 1非独享集群，2独享集群， 0全部
+	ExclusterType *int64 `name:"ExclusterType,omitempty"`
 	// 按照一个或者多个实例 ID 查询。实例 ID 形如：dcdbt-2t4cf98d
 	InstanceIds []*string `name:"InstanceIds,omitempty"`
-	// 是否根据 VPC 网络来搜索，0 为否，1 为是
-	IsFilterVpc []*int64 `name:"IsFilterVpc,omitempty"`
+	// 标识是否使用ExclusterType字段, false不使用，true使用
+	IsFilterExcluster *bool `name:"IsFilterExcluster,omitempty"`
+	// 是否根据 VPC 网络来搜索
+	IsFilterVpc *bool `name:"IsFilterVpc,omitempty"`
 	// 返回数量，默认为 10，最大值为 100。
 	Limit *int64 `name:"Limit,omitempty"`
 	// 偏移量，默认为 0

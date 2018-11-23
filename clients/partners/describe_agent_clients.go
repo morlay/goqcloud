@@ -32,7 +32,7 @@ func (req *DescribeAgentClientsRequest) Invoke(client github_com_morlay_goqcloud
 
 type DescribeAgentClientsResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
-	// 代客列表
+	// 待审核代客列表
 	AgentClientSet []*AgentClientElem `json:"AgentClientSet"`
 	// 符合条件的代客总数
 	TotalCount int64 `json:"TotalCount"`

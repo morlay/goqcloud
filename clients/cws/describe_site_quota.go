@@ -20,10 +20,10 @@ func (req *DescribeSiteQuotaRequest) Invoke(client github_com_morlay_goqcloud.Cl
 
 type DescribeSiteQuotaResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
-	// 剩余可用的站点数。
+	// 剩余可用的扫描次数。
 	Available int64 `json:"Available"`
-	// 已购买的站点数。
+	// 已购买的扫描次数。
 	Total int64 `json:"Total"`
-	// 已使用的站点数。
+	// 已使用的扫描次数。
 	Used int64 `json:"Used"`
 }

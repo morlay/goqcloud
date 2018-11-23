@@ -8,6 +8,8 @@ import (
 // https://cloud.tencent.com/document/api/362/15659
 
 type ModifyDiskAttributesRequest struct {
+	// 成功挂载到云主机后该云硬盘是否随云主机销毁，TRUE表示随云主机销毁，FALSE表示不随云主机销毁。仅支持按量计费云硬盘数据盘。
+	DeleteWithInstance *bool `name:"DeleteWithInstance,omitempty"`
 	// 一个或多个待操作的云硬盘ID。如果传入多个云盘ID，仅支持所有云盘修改为同一属性。
 	DiskIds []*string `name:"DiskIds"`
 	// 新的云硬盘名称。

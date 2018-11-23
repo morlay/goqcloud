@@ -13,7 +13,7 @@ type DeleteRoutesRequest struct {
 	// 路由表实例ID。
 	RouteTableId string `name:"RouteTableId"`
 	// 路由策略对象。
-	Routes []*string `name:"Routes"`
+	Routes []*Route `name:"Routes"`
 }
 
 func (req *DeleteRoutesRequest) Invoke(client github_com_morlay_goqcloud.Client) (*DeleteRoutesResponse, error) {

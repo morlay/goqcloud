@@ -10,7 +10,7 @@ import (
 type ResizeDiskRequest struct {
 	// 云硬盘ID， 通过DescribeDisks接口查询。
 	DiskId string `name:"DiskId"`
-	// 云硬盘扩容后的大小，单位为GB，必须大于当前云硬盘大小。取值范围： 普通云硬盘:10GB ~ 4000G；高性能云硬盘:50GB ~ 4000GB；SSD云硬盘:100GB ~ 4000GB，步长均为10GB。
+	// 云硬盘扩容后的大小，单位为GB，必须大于当前云硬盘大小。云盘大小取值范围参见云硬盘产品分类的说明。
 	DiskSize int64 `name:"DiskSize"`
 	// 区域
 	Region string `name:"Region"`

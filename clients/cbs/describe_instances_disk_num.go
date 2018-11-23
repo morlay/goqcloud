@@ -22,8 +22,6 @@ func (req *DescribeInstancesDiskNumRequest) Invoke(client github_com_morlay_goqc
 
 type DescribeInstancesDiskNumResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
-	// 当前云服务器已挂载弹性云盘数量。
-	AttachedDiskCount int64 `json:"AttachedDiskCount"`
-	// 当前云服务器最大可挂载弹性云盘数量。
-	MaxAttachCount int64 `json:"MaxAttachCount"`
+	// 各个云服务器已挂载和可挂载弹性云盘的数量。
+	AttachDetail []*AttachDetail `json:"AttachDetail"`
 }

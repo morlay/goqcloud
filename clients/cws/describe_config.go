@@ -1,9 +1,8 @@
 package cws
 
 import (
-	time "time"
-
 	github_com_morlay_goqcloud "github.com/morlay/goqcloud"
+	time "time"
 )
 
 // 查看用户配置列表
@@ -22,6 +21,8 @@ func (req *DescribeConfigRequest) Invoke(client github_com_morlay_goqcloud.Clien
 
 type DescribeConfigResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
+	// 云用户appid。
+	Appid int64 `json:"Appid"`
 	// 记录创建时间。
 	CreatedAt time.Time `json:"CreatedAt"`
 	// 配置ID。

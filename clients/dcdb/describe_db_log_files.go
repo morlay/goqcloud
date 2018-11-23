@@ -26,4 +26,18 @@ func (req *DescribeDbLogFilesRequest) Invoke(client github_com_morlay_goqcloud.C
 
 type DescribeDbLogFilesResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
+	// 日志文件列表
+	Files []*LogFileInfo `json:"Files"`
+	// 实例 ID，形如：dcdbt-ow728lmc。
+	InstanceId string `json:"InstanceId"`
+	// 如果是普通网络的实例，做用本前缀加上URI为下载地址
+	NormalPrefix string `json:"NormalPrefix"`
+	// 分片 ID，形如：shard-7noic7tv
+	ShardId string `json:"ShardId"`
+	// 请求日志总数
+	Total int64 `json:"Total"`
+	// 请求日志类型。1-binlog，2-冷备，3-errlog，4-slowlog。
+	Type int64 `json:"Type"`
+	// 如果是VPC网络的实例，做用本前缀加上URI为下载地址
+	VpcPrefix string `json:"VpcPrefix"`
 }

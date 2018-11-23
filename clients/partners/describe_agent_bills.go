@@ -23,7 +23,7 @@ type DescribeAgentBillsRequest struct {
 	// 区域
 	Region string `name:"Region"`
 	// 支付月份，如2018-02
-	SettleMonth *string `name:"SettleMonth,omitempty"`
+	SettleMonth string `name:"SettleMonth"`
 }
 
 func (req *DescribeAgentBillsRequest) Invoke(client github_com_morlay_goqcloud.Client) (*DescribeAgentBillsResponse, error) {

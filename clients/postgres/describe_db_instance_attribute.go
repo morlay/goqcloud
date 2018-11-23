@@ -8,7 +8,7 @@ import (
 // https://cloud.tencent.com/document/api/409/16772
 
 type DescribeDbInstanceAttributeRequest struct {
-	// 实例ID。
+	// 实例ID
 	DBInstanceId string `name:"DBInstanceId"`
 	// 区域
 	Region string `name:"Region"`

@@ -12,7 +12,7 @@ type DescribeDatabasesRequest struct {
 	DatabaseRegexp *string `name:"DatabaseRegexp,omitempty"`
 	// 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
 	InstanceId string `name:"InstanceId"`
-	// 单次请求数量，取值范围：[0-100]。
+	// 单次请求数量，默认值为20，最小值为1，最大值为100。
 	Limit *int64 `name:"Limit,omitempty"`
 	// 偏移量，最小值为0。
 	Offset *int64 `name:"Offset,omitempty"`

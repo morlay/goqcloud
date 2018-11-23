@@ -14,7 +14,7 @@ type CreateDbInstancesRequest struct {
 	DBVersion string `name:"DBVersion"`
 	// 实例计费类型。目前只支持：PREPAID（预付费，即包年包月）。
 	InstanceChargeType *string `name:"InstanceChargeType,omitempty"`
-	// 一次性购买的实例数量。
+	// 一次性购买的实例数量。取值1-100
 	InstanceCount int64 `name:"InstanceCount"`
 	// 购买时长，单位：月。目前只支持1,2,3,4,5,6,7,8,9,10,11,12,24,36这些值。
 	Period int64 `name:"Period"`

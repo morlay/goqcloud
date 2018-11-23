@@ -1,5 +1,5 @@
 gen:
-	vgo run ./cmd/main.go
+	go run ./__generator__/main.go
 
 test:
-	vgo test -v -race ./...
+	go test -v -race ./...

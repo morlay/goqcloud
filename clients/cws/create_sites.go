@@ -12,6 +12,8 @@ type CreateSitesRequest struct {
 	Region string `name:"Region"`
 	// 站点的url列表
 	Urls []*string `name:"Urls"`
+	// 访问网站的客户端标识
+	UserAgent *string `name:"UserAgent,omitempty"`
 }
 
 func (req *CreateSitesRequest) Invoke(client github_com_morlay_goqcloud.Client) (*CreateSitesResponse, error) {

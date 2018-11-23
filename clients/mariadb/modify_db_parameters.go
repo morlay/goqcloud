@@ -24,8 +24,8 @@ func (req *ModifyDbParametersRequest) Invoke(client github_com_morlay_goqcloud.C
 
 type ModifyDbParametersResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
-	// 参数修改结果
-	Config []*ParamModifyResult `json:"Config"`
 	// 实例 ID，形如：tdsql-ow728lmc。
 	InstanceId string `json:"InstanceId"`
+	// 参数修改结果
+	Result []*ParamModifyResult `json:"Result"`
 }

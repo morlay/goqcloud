@@ -16,8 +16,6 @@ type StopInstancesRequest struct {
 	Region string `name:"Region"`
 	// 实例的关闭模式。取值范围：SOFT_FIRST：表示在正常关闭失败后进行强制关闭HARD：直接强制关闭SOFT：仅软关机默认取值：SOFT。
 	StopType *string `name:"StopType,omitempty"`
-	// 关机收费模式KEEP_CHARGING：关机继续收费STOP_CHARGING：关机停止收费默认取值：KEEP_CHARGING。
-	StoppedMode *string `name:"StoppedMode,omitempty"`
 }
 
 func (req *StopInstancesRequest) Invoke(client github_com_morlay_goqcloud.Client) (*StopInstancesResponse, error) {

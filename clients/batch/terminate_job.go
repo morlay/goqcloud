@@ -4,8 +4,8 @@ import (
 	github_com_morlay_goqcloud "github.com/morlay/goqcloud"
 )
 
-// 终止终止作业
-// https://cloud.tencent.com/document/api/599/15911
+// 终止作业
+// https://cloud.tencent.com/document/api/599/20409
 
 type TerminateJobRequest struct {
 	// 作业ID

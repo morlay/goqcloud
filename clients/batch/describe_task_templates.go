@@ -8,7 +8,7 @@ import (
 // https://cloud.tencent.com/document/api/599/15902
 
 type DescribeTaskTemplatesRequest struct {
-	// 过滤条件
+	// 过滤条件 task-template-name - String - 是否必填：否 -（过滤条件）按照任务模板名称过滤。
 	Filters []*Filter `name:"Filters,omitempty"`
 	// 返回数量
 	Limit *int64 `name:"Limit,omitempty"`

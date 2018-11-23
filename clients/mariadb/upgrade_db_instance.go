@@ -19,7 +19,7 @@ type UpgradeDbInstanceRequest struct {
 	// 存储空间大小，单位：GB，可以通过 DescribeDBInstanceSpecs 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
 	Storage int64 `name:"Storage"`
 	// 代金券ID列表，目前仅支持指定一张代金券。
-	VoucherIds *string `name:"VoucherIds,omitempty"`
+	VoucherIds []*string `name:"VoucherIds,omitempty"`
 }
 
 func (req *UpgradeDbInstanceRequest) Invoke(client github_com_morlay_goqcloud.Client) (*UpgradeDbInstanceResponse, error) {

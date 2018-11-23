@@ -8,7 +8,7 @@ import (
 // https://cloud.tencent.com/document/api/236/15865
 
 type CreateDbInstanceHourRequest struct {
-	// 自动续费标记，值为0或1
+	// 自动续费标记，值为0或1。购买按量计费实例该字段无意义
 	AutoRenewFlag *int64 `name:"AutoRenewFlag,omitempty"`
 	// 备库2的可用区ID，默认为0，购买主实例时可指定该参数，购买只读实例或者灾备实例时指定该参数无意义
 	BackupZone *string `name:"BackupZone,omitempty"`
@@ -28,7 +28,7 @@ type CreateDbInstanceHourRequest struct {
 	MasterRegion *string `name:"MasterRegion,omitempty"`
 	// 实例内存大小，单位：MB，请使用获取云数据库可售卖规格接口获取可创建的内存规格
 	Memory int64 `name:"Memory"`
-	// 参数列表，参数格式如ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过查询参数列表查询支持设置的参数
+	// 参数列表，参数格式如ParamList.0.Name=auto_increment_increment&ParamList.0.Value=1。可通过查询参数列表查询支持设置的参数
 	ParamList []*ParamInfo `name:"ParamList,omitempty"`
 	// 设置root帐号密码，密码规则：8-64个字符，至少包含字母、数字、字符（支持的字符：_+-&=!@#$%^*()）中的两种，购买主实例时可指定该参数，购买只读实例或者灾备实例时指定该参数无意义
 	Password *string `name:"Password,omitempty"`
@@ -42,7 +42,7 @@ type CreateDbInstanceHourRequest struct {
 	Region string `name:"Region"`
 	// 只读实例信息
 	RoGroup *RoGroup `name:"RoGroup,omitempty"`
-	// 安全组参数
+	// 安全组参数，可使用查询项目安全组信息接口查询某个项目的安全组详情
 	SecurityGroup []*string `name:"SecurityGroup,omitempty"`
 	// 备库1的可用区ID，默认为zoneId的值，购买主实例时可指定该参数，购买只读实例或者灾备实例时指定该参数无意义
 	SlaveZone *string `name:"SlaveZone,omitempty"`
@@ -64,8 +64,8 @@ func (req *CreateDbInstanceHourRequest) Invoke(client github_com_morlay_goqcloud
 
 type CreateDbInstanceHourResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
-	// 短订单ID，用于调用云API相关接口，如获取订单信息
-	DealIds string `json:"DealIds"`
+	// 短订单ID
+	DealIds []*string `json:"DealIds"`
 	// 实例ID列表
 	InstanceIds []*string `json:"InstanceIds"`
 }

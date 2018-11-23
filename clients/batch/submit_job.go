@@ -13,7 +13,7 @@ type SubmitJobRequest struct {
 	// 作业信息
 	Job Job `name:"Job"`
 	// 作业所提交的位置信息。通过该参数可以指定作业关联CVM所属可用区等信息。
-	Placement []*Placement `name:"Placement"`
+	Placement Placement `name:"Placement"`
 	// 区域
 	Region string `name:"Region"`
 }

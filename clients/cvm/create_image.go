@@ -8,6 +8,8 @@ import (
 // https://cloud.tencent.com/document/api/213/16726
 
 type CreateImageRequest struct {
+	// DryRun
+	DryRun *bool `name:"DryRun,omitempty"`
 	// 软关机失败时是否执行强制关机以制作镜像
 	ForcePoweroff *string `name:"ForcePoweroff,omitempty"`
 	// 镜像描述

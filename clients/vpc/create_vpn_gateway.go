@@ -20,6 +20,8 @@ type CreateVpnGatewayRequest struct {
 	VpcId string `name:"VpcId"`
 	// VPN网关名称，最大长度不能超过60个字节。
 	VpnGatewayName string `name:"VpnGatewayName"`
+	// 可用区，如：ap-guangzhou-2。
+	Zone *string `name:"Zone,omitempty"`
 }
 
 func (req *CreateVpnGatewayRequest) Invoke(client github_com_morlay_goqcloud.Client) (*CreateVpnGatewayResponse, error) {

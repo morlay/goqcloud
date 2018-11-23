@@ -8,8 +8,14 @@ import (
 // https://cloud.tencent.com/document/api/599/15905
 
 type DescribeTaskRequest struct {
+	// 过滤条件，详情如下： task-instance-type - String - 是否必填： 否 - 按照任务实例状态进行过滤（SUBMITTED：已提交；PENDING：等待中；RUNNABLE：可运行；STARTING：启动中；RUNNING：运行中；SUCCEED：成功；FAILED：失败；FAILED_INTERRUPTED：失败后保留实例）。
+	Filters []*Filter `name:"Filters,omitempty"`
 	// 作业ID
 	JobId string `name:"JobId"`
+	// 返回数量。默认取值100，最大取值1000。
+	Limit *int64 `name:"Limit,omitempty"`
+	// 偏移量
+	Offset *int64 `name:"Offset,omitempty"`
 	// 区域
 	Region string `name:"Region"`
 	// 任务名称

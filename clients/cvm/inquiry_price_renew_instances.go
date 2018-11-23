@@ -16,6 +16,8 @@ type InquiryPriceRenewInstancesRequest struct {
 	InstanceIds []*string `name:"InstanceIds"`
 	// 区域
 	Region string `name:"Region"`
+	// 是否续费弹性数据盘。取值范围：TRUE：表示续费包年包月实例同时续费其挂载的弹性数据盘FALSE：表示续费包年包月实例同时不再续费其挂载的弹性数据盘默认取值：TRUE。
+	RenewPortableDataDisk *bool `name:"RenewPortableDataDisk,omitempty"`
 }
 
 func (req *InquiryPriceRenewInstancesRequest) Invoke(client github_com_morlay_goqcloud.Client) (*InquiryPriceRenewInstancesResponse, error) {

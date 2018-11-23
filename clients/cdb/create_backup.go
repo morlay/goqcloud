@@ -24,4 +24,6 @@ func (req *CreateBackupRequest) Invoke(client github_com_morlay_goqcloud.Client)
 
 type CreateBackupResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
+	// 备份任务ID。
+	BackupId int64 `json:"BackupId"`
 }

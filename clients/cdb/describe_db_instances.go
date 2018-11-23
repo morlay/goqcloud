@@ -22,13 +22,13 @@ type DescribeDbInstancesRequest struct {
 	InstanceNames []*string `name:"InstanceNames,omitempty"`
 	// 实例类型，可取值：1-主实例，2-灾备实例，3-只读实例
 	InstanceTypes []*int64 `name:"InstanceTypes,omitempty"`
-	// 单次请求返回的数量，默认值为20，最大值为100
+	// 单次请求返回的数量，默认值为20，最大值为2000
 	Limit *int64 `name:"Limit,omitempty"`
-	// 记录偏移量，默认值为0
+	// 偏移量，默认值为0
 	Offset *int64 `name:"Offset,omitempty"`
-	// 排序的字段，目前支持："InstanceId", "InstanceName", "CreateTime", "DeadlineTime"
+	// 返回结果集排序的字段，目前支持："InstanceId", "InstanceName", "CreateTime", "DeadlineTime"
 	OrderBy *string `name:"OrderBy,omitempty"`
-	// 排序方式，目前支持："ASC"或者"DESC"
+	// 返回结果集排序方式，目前支持："ASC"或者"DESC"
 	OrderDirection *string `name:"OrderDirection,omitempty"`
 	// 付费类型，可取值：0-包年包月，1-小时计费
 	PayTypes []*int64 `name:"PayTypes,omitempty"`
@@ -38,7 +38,7 @@ type DescribeDbInstancesRequest struct {
 	Region string `name:"Region"`
 	// 安全组ID
 	SecurityGroupId *string `name:"SecurityGroupId,omitempty"`
-	// 实例状态，可取值：0-创建中，1-运行中，4-删除中，5-隔离中
+	// 实例状态，可取值：0-创建中，1-运行中，4-隔离中，5-已隔离
 	Status []*int64 `name:"Status,omitempty"`
 	// 子网ID
 	SubnetIds []*int64 `name:"SubnetIds,omitempty"`
@@ -48,15 +48,15 @@ type DescribeDbInstancesRequest struct {
 	Vips []*string `name:"Vips,omitempty"`
 	// 私有网络的ID
 	VpcIds []*int64 `name:"VpcIds,omitempty"`
-	// 是否包含灾备实例
+	// 是否包含灾备实例，可取值：0-不包含，1-包含
 	WithDr *int64 `name:"WithDr,omitempty"`
-	// 是否包含独享集群信息
+	// 是否包含独享集群详细信息，可取值：0-不包含，1-包含
 	WithExCluster *int64 `name:"WithExCluster,omitempty"`
-	// 是否包含主实例
+	// 是否包含主实例，可取值：0-不包含，1-包含
 	WithMaster *int64 `name:"WithMaster,omitempty"`
-	// 是否包含只读实例
+	// 是否包含只读实例，可取值：0-不包含，1-包含
 	WithRo *int64 `name:"WithRo,omitempty"`
-	// 是否包含安全组信息
+	// 是否包含安全组详细信息，可取值：0-不包含，1-包含
 	WithSecurityGroup *int64 `name:"WithSecurityGroup,omitempty"`
 	// 可用区的ID
 	ZoneIds []*int64 `name:"ZoneIds,omitempty"`

@@ -1,9 +1,8 @@
 package cws
 
 import (
-	time "time"
-
 	github_com_morlay_goqcloud "github.com/morlay/goqcloud"
+	time "time"
 )
 
 // 修改监测任务的属性

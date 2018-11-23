@@ -9,9 +9,15 @@ import (
 
 type ModifyComputeEnvRequest struct {
 	// 计算节点期望个数
-	DesiredComputeNodeCount int64 `name:"DesiredComputeNodeCount"`
+	DesiredComputeNodeCount *int64 `name:"DesiredComputeNodeCount,omitempty"`
+	// 计算环境属性数据
+	EnvData *ComputeEnvData `name:"EnvData,omitempty"`
+	// 计算环境描述
+	EnvDescription *string `name:"EnvDescription,omitempty"`
 	// 计算环境ID
 	EnvId string `name:"EnvId"`
+	// 计算环境名称
+	EnvName *string `name:"EnvName,omitempty"`
 	// 区域
 	Region string `name:"Region"`
 }

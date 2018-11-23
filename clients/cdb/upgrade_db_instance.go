@@ -42,8 +42,6 @@ type UpgradeDbInstanceResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
 	// 异步任务的请求ID，可使用此ID查询异步任务的执行结果
 	AsyncRequestId string `json:"AsyncRequestId"`
-	// 短订单ID，用于调用云API相关接口，如获取订单信息
+	// 订单ID，用于调用云API相关接口，如获取订单信息
 	DealIds []*string `json:"DealIds"`
-	// 长订单ID，用于反馈订单问题给腾讯云官方客服
-	DealNames []*string `json:"DealNames"`
 }

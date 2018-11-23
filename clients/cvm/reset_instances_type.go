@@ -12,7 +12,7 @@ type ResetInstancesTypeRequest struct {
 	ForceStop *bool `name:"ForceStop,omitempty"`
 	// 一个或多个待操作的实例ID。可通过DescribeInstances接口返回值中的InstanceId获取。每次请求批量实例的上限为1。
 	InstanceIds []*string `name:"InstanceIds"`
-	// 实例机型。不同实例机型指定了不同的资源规格，具体取值可参见附表实例资源规格对照表，也可以调用查询实例资源规格列表接口获得最新的规格表。
+	// 实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口DescribeInstanceTypeConfigs来获得最新的规格表或参见实例类型描述。
 	InstanceType string `name:"InstanceType"`
 	// 区域
 	Region string `name:"Region"`

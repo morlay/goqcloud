@@ -14,6 +14,8 @@ type ModifyInstancesAttributeRequest struct {
 	InstanceName *string `name:"InstanceName,omitempty"`
 	// 区域
 	Region string `name:"Region"`
+	// 指定实例的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。
+	SecurityGroups []*string `name:"SecurityGroups,omitempty"`
 }
 
 func (req *ModifyInstancesAttributeRequest) Invoke(client github_com_morlay_goqcloud.Client) (*ModifyInstancesAttributeResponse, error) {

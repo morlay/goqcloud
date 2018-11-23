@@ -10,11 +10,11 @@ import (
 type AssignPrivateIPAddressesRequest struct {
 	// 弹性网卡实例ID，例如：eni-m6dyj72l。
 	NetworkInterfaceId string `name:"NetworkInterfaceId"`
-	// 指定的内网IP信息。
+	// 指定的内网IP信息，单次最多指定10个。
 	PrivateIpAddresses []*PrivateIpAddressSpecification `name:"PrivateIpAddresses,omitempty"`
 	// 区域
 	Region string `name:"Region"`
-	// 新申请的内网IP地址个数。
+	// 新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。
 	SecondaryPrivateIpAddressCount *int64 `name:"SecondaryPrivateIpAddressCount,omitempty"`
 }
 

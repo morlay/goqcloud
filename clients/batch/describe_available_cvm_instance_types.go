@@ -8,7 +8,7 @@ import (
 // https://cloud.tencent.com/document/api/599/15887
 
 type DescribeAvailableCvmInstanceTypesRequest struct {
-	// 过滤条件
+	// 过滤条件。 zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。 instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。实例机型系列形如：S1、I1、M1等。
 	Filters []*Filter `name:"Filters,omitempty"`
 	// 区域
 	Region string `name:"Region"`

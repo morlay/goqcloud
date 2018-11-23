@@ -8,7 +8,7 @@ import (
 // https://cloud.tencent.com/document/api/599/15909
 
 type DescribeJobsRequest struct {
-	// 过滤条件
+	// 过滤条件 job-id - String - 是否必填：否 -（过滤条件）按照作业ID过滤。 job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。 job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。 zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。
 	Filters []*Filter `name:"Filters,omitempty"`
 	// 作业ID
 	JobIds []*string `name:"JobIds,omitempty"`
@@ -29,7 +29,7 @@ func (req *DescribeJobsRequest) Invoke(client github_com_morlay_goqcloud.Client)
 type DescribeJobsResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
 	// 作业列表
-	JobSet JobView `json:"JobSet"`
+	JobSet []*JobView `json:"JobSet"`
 	// 符合条件的作业数量
 	TotalCount int64 `json:"TotalCount"`
 }

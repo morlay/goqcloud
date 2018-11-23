@@ -20,8 +20,8 @@ func (req *DescribeImportImageOsRequest) Invoke(client github_com_morlay_goqclou
 
 type DescribeImportImageOsResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
-	// 支持的导入镜像的操作系统类型
-	ImportImageOsListSupported []*string `json:"ImportImageOsListSupported"`
-	// 支持的导入镜像的操作系统版本
-	ImportImageOsVersionSupported []*string `json:"ImportImageOsVersionSupported"`
+	// 支持的导入镜像的操作系统类型。
+	ImportImageOsListSupported ImageOsList `json:"ImportImageOsListSupported"`
+	// 支持的导入镜像的操作系统版本。
+	ImportImageOsVersionSet []*OsVersion `json:"ImportImageOsVersionSet"`
 }

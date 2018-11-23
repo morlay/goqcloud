@@ -1,9 +1,8 @@
 package mariadb
 
 import (
-	time "time"
-
 	github_com_morlay_goqcloud "github.com/morlay/goqcloud"
+	time "time"
 )
 
 // 查询慢查询日志列表
@@ -41,11 +40,11 @@ type DescribeDbSlowLogsResponse struct {
 	// 慢查询日志数据
 	Data []*SlowLogData `json:"Data"`
 	// 所有语句锁时间总和
-	LockTimeSum string `json:"LockTimeSum"`
+	LockTimeSum float64 `json:"LockTimeSum"`
 	// 所有语句查询总次数
-	QueryCount string `json:"QueryCount"`
+	QueryCount int64 `json:"QueryCount"`
 	// 所有语句查询时间总和
-	QueryTimeSum string `json:"QueryTimeSum"`
+	QueryTimeSum float64 `json:"QueryTimeSum"`
 	// 总记录数
-	Total string `json:"Total"`
+	Total int64 `json:"Total"`
 }

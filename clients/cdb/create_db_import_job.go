@@ -10,7 +10,7 @@ import (
 type CreateDbImportJobRequest struct {
 	// 导入的目标数据库名，不传表示不指定数据库。
 	DbName *string `name:"DbName,omitempty"`
-	// 文件名称。
+	// 文件名称。该文件是指用户已上传到腾讯云的文件。
 	FileName string `name:"FileName"`
 	// 实例的ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。
 	InstanceId string `name:"InstanceId"`

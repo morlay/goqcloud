@@ -10,7 +10,7 @@ import (
 type DescribeBackupDatabasesRequest struct {
 	// 实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。
 	InstanceId string `name:"InstanceId"`
-	// 分页大小，最大值为2000。
+	// 分页大小，最小值为1，最大值为2000。
 	Limit *int64 `name:"Limit,omitempty"`
 	// 分页偏移量。
 	Offset *int64 `name:"Offset,omitempty"`

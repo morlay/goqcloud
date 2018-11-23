@@ -10,7 +10,7 @@ import (
 type DescribeComputeEnvsRequest struct {
 	// 计算环境ID
 	EnvIds []*string `name:"EnvIds,omitempty"`
-	// 过滤条件
+	// 过滤条件 zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。 env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。 env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。
 	Filters []*Filter `name:"Filters,omitempty"`
 	// 返回数量
 	Limit *int64 `name:"Limit,omitempty"`

@@ -10,15 +10,15 @@ import (
 type SpeechTranslateRequest struct {
 	// pcm : 146   amr : 33554432   mp3 : 83886080
 	AudioFormat int64 `name:"AudioFormat"`
-	// 语音分片内容的base64字符串
+	// 语音分片内容的base64字符串，音频内容应含有效并可识别的文本
 	Data string `name:"Data"`
-	// 是否最后一片
+	// 是否最后一片语音分片，0-否，1-是
 	IsEnd int64 `name:"IsEnd"`
-	// 项目id
+	// 项目id，用户可自定义
 	ProjectId *int64 `name:"ProjectId,omitempty"`
 	// 区域
 	Region string `name:"Region"`
-	// 语音分片后的第几片
+	// 语音分片的序号，从0开始
 	Seq int64 `name:"Seq"`
 	// 一段完整的语音对应一个SessionUuid
 	SessionUuid string `name:"SessionUuid"`

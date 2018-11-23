@@ -8,7 +8,7 @@ import (
 // https://cloud.tencent.com/document/api/215/17514
 
 type DescribeVpnGatewaysRequest struct {
-	// 过滤器对象属性
+	// 过滤条件，参数不支持同时指定VpnGatewayIds和Filters。vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。vpn-gateway-name - String - （过滤条件）VPN实例名称。type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL'。public-ip-address- String - （过滤条件）公网IP。renew-flag - String - （过滤条件）网关续费类型，手动续费：'NOTIFY_AND_MANUAL_RENEW'、自动续费：'NOTIFY_AND_AUTO_RENEW'。zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。
 	Filters []*FilterObject `name:"Filters,omitempty"`
 	// 请求对象个数
 	Limit *int64 `name:"Limit,omitempty"`

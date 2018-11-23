@@ -8,9 +8,9 @@ import (
 // https://cloud.tencent.com/document/api/236/15867
 
 type ModifyDbInstanceVipVportRequest struct {
-	// 目标IP。
+	// 目标IP。该参数和DstPort参数，两者必传一个。
 	DstIp *string `name:"DstIp,omitempty"`
-	// 目标端口，支持范围为：[1024-65535]。
+	// 目标端口，支持范围为：[1024-65535]。该参数和DstIp参数，两者必传一个。
 	DstPort *int64 `name:"DstPort,omitempty"`
 	// 实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用查询实例列表 接口获取，其值为输出参数中字段 InstanceId 的值。
 	InstanceId string `name:"InstanceId"`

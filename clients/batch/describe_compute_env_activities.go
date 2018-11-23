@@ -8,9 +8,9 @@ import (
 // https://cloud.tencent.com/document/api/599/15896
 
 type DescribeComputeEnvActivitiesRequest struct {
-	// u8ba1u7b97u73afu5883ID
+	// 计算环境ID
 	EnvId string `name:"EnvId"`
-	// 过滤条件
+	// 过滤条件 compute-node-id - String - 是否必填：否 -（过滤条件）按照计算节点ID过滤。
 	Filters *Filter `name:"Filters,omitempty"`
 	// 返回数量
 	Limit *int64 `name:"Limit,omitempty"`

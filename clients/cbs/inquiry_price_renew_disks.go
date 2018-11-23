@@ -29,5 +29,5 @@ func (req *InquiryPriceRenewDisksRequest) Invoke(client github_com_morlay_goqclo
 type InquiryPriceRenewDisksResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
 	// 描述了续费云盘的价格。
-	DiskPrice Price `json:"DiskPrice"`
+	DiskPrice PrepayPrice `json:"DiskPrice"`
 }

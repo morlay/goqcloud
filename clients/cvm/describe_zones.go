@@ -20,8 +20,8 @@ func (req *DescribeZonesRequest) Invoke(client github_com_morlay_goqcloud.Client
 
 type DescribeZonesResponse struct {
 	github_com_morlay_goqcloud.TencentCloudBaseResponse
-	// 可用区数量
+	// 可用区数量。
 	TotalCount int64 `json:"TotalCount"`
-	// 可用区列表信息
+	// 可用区列表信息。
 	ZoneSet []*ZoneInfo `json:"ZoneSet"`
 }
